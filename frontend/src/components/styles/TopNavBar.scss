@@ -1,0 +1,55 @@
+/* TopNavBar.scss */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+.top-nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px;
+    align-items: center;
+    box-shadow: 0 4px 6px -6px #222;
+    background-color: #ff6565;
+    height: 80px;
+  
+    /* Responsive styling */
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
+  .top-nav-bar__logo {
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+    color: #f0f0f0;
+    text-decoration: none;
+    margin-left: 24px;
+  }
+  
+  .top-nav-bar__nav {
+    display: flex; /* Make the navigation items flex */
+  }
+  
+
+.nav-item {
+    font-family: 'Archivo Black', sans-serif;
+  margin-right: 20px;
+  font-size: 24px;
+  color: #fefefe;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #ffd900;
+  }
+
+  /* Responsive styling for navigation items */
+  @media (max-width: 768px) {
+    margin: 8px 0;
+    font-size: 14px;
+  }
+    }
+  
+  
