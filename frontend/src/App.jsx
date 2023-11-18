@@ -1,10 +1,14 @@
+
 import './App.scss';
-import React from 'react';
+import TopNav from './components/TopNav'
 
 function App() {
   return (
-    <div className="App-header">
-      <h1 className='App-link'> Cat Yoga</h1>
+    <div className="App">
+      <TopNav/>
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
     </div>
   );
 }
