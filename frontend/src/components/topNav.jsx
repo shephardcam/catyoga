@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
-function topNav() {
+function TopNav() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -31,4 +31,4 @@ function topNav() {
   );
 }
 
-export default topNav;
+export default TopNav;
