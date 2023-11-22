@@ -1,0 +1,19 @@
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+  
+    a {
+      
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #ff6565;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #ff3939;
+      }
+    }
+  }
+  
