@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import '../styles/waiver.scss';
 
 const downloadPdf = () => {
-  const pdfPath = '../public/Waiver.pdf';
+  const pdfPath = '/Waiver.pdf';
   const link = document.createElement('a');
   link.href = pdfPath;
   link.download = 'Waiver.pdf';
@@ -18,7 +18,7 @@ const WaiverPage = () => {
 
   return (
     <main>
-      <h2>Sign Waiver</h2>
+      <h2 className= 'header'>  read and agree to our waiver to continue.</h2>
       <embed src="/Waiver.pdf" type="application/pdf" width="100%" height="600px" />
 
       <div className='buttons'> 
