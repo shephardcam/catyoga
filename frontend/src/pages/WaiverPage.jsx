@@ -1,7 +1,7 @@
 //import TopNav from './components/TopNav';
 //import Waiver from './components/Waiver';
 import React, { useEffect } from 'react';
-import './styles/waiver.scss';
+import '../styles/waiver.scss';
 
 const downloadPdf = () => {
   const pdfPath = '../public/Waiver.pdf';
