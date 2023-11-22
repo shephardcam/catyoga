@@ -1,4 +1,5 @@
-import TopNav from './components/TopNav'
+import React from 'react';
+import TopNav from './components/TopNav';
 import Waiver from './components/Waiver';
 
 function App() {
