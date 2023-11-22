@@ -7,6 +7,7 @@ import BookingPage from './pages/BookingPage';
 import ProfilePage from './pages/ProfilePage';
 import AboutPage from './pages/AboutPage';
 import FAQPage from './pages/FAQPage';
+import WaiverPage from './pages/WaiverPage';
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
           <Route path='/profile' element={<ProfilePage/>}/>
           <Route path='/about' element={<AboutPage/>}/>
           <Route path='/FAQ' element={<FAQPage/>}/>
-            
+          <Route path='/waiver' element={<WaiverPage/>}/>
         </Routes> 
       
       </Router>
