@@ -13,15 +13,22 @@ import WaiverPage from './pages/WaiverPage';
 
 function App() {
 
-  const [backendData, setBackendData] = useState({ users: [] });
+  const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:8001/api/users")
-      .then(response => response.json())
-      .then(data => setBackendData(data))
-      .catch(error => console.error("Error fetching data:", error));
-  }, []);
-
+    // Fetch data from the Express API
+    fetch("/api/users")
+      .then((response) => response.json())
+      .then((data) => {
+        setUsers(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setIsLoading(false);
+      });
+  }, []); // The empty dependency array ensures the effect runs only once, similar to componentDidMount
 
   return (
     
@@ -46,13 +53,17 @@ function App() {
         </p>
 
 
-      {/* testing backend data fetching */}
-      {(typeof backendData.users === 'undefined') ? (
+      <h1>User List</h1>
+      {isLoading ? (
         <p>Loading...</p>
-      ): (
-        backendData.users.map((user, i) => (
-          <p key={i}>{user}</p>
-        ))
+      ) : (
+        <ul>
+          {users.map((user) => (
+            <li key={user.id}>
+              <strong>{user.fullname}</strong> - {user.email}
+            </li>
+          ))}
+        </ul>
       )}
 
     </div>
