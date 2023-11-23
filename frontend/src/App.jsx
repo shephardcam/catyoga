@@ -8,25 +8,23 @@ import BookingPage from './pages/BookingPage';
 import ProfilePage from './pages/ProfilePage';
 import AboutPage from './pages/AboutPage';
 import FAQPage from './pages/FAQPage';
+import WaiverPage from './pages/WaiverPage';
 
 
 function App() {
 
-  const [backendData, setBackendData] = useState([{}])
+  const [backendData, setBackendData] = useState({ users: [] });
 
   useEffect(() => {
-    fetch("http://localhost:8001/api").then(
-      response => response.json()
-    ).then(
-      data => {
-        setBackendData(data)
-      }
-    )
+    fetch("http://localhost:8001/api/users")
+      .then(response => response.json())
+      .then(data => setBackendData(data))
+      .catch(error => console.error("Error fetching data:", error));
   }, []);
 
 
-
   return (
+    
     <div className="App">
       <Router>
       <TopNav/>
@@ -37,7 +35,7 @@ function App() {
           <Route path='/profile' element={<ProfilePage/>}/>
           <Route path='/about' element={<AboutPage/>}/>
           <Route path='/FAQ' element={<FAQPage/>}/>
-            
+          <Route path='/waiver' element={<WaiverPage/>}/>
         </Routes> 
       
       </Router>
@@ -46,6 +44,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+
 
       {/* testing backend data fetching */}
       {(typeof backendData.users === 'undefined') ? (

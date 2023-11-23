@@ -1,5 +1,5 @@
 {
-  "name": "node-skeleton",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "local": "./node_modules/.bin/nodemon -L --ignore public/",
-    "reset": "psql -U development -d catyoga < ./db/schema/create.sql && psql -U development -d catyoga < ./db/schema/development.sql"
+    "error": "TEST_ERROR=true node ./server.js",
+    "db:reset": "node bin/resetdb.js"
 
   },
   "author": "Lighthouse Labs",

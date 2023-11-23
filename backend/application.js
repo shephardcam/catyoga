@@ -10,7 +10,7 @@ const app = express();
 
 const db = require("./db")
 
-const registeredClasses = require("./routes/registeredClasses");
+const userRouter = require("./routes/userRouter");
 // const topics = require("./routes/topics");
 
 function read(file) {
@@ -34,11 +34,11 @@ module.exports = function application(
   app.use(cors());
   app.use(helmet());
   app.use(bodyparser.json());
-  // app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.static(path.join(__dirname, 'public')));
 
-  app.use("/api", registeredClasses(db));
+  app.use("/api", userRouter(db));
   // app.use("/api", topics(db));
-  
+
   app.get('/api', (req, res) => {
   // res.render('index');
   res.json({"users": ['user1', 'user2', 'user3'] })
@@ -50,6 +50,9 @@ module.exports = function application(
       read(path.resolve(__dirname, `db/schema/${ENV}.sql`))
     ])
       .then(([create, seed]) => {
+        console.log("Resolved create.sql path:", path.resolve(__dirname, `db/schema/create.sql`));
+        console.log("Resolved seed.sql path:", path.resolve(__dirname, `db/schema/${ENV}.sql`));
+       
         app.get("/api/debug/reset", (request, response) => {
           db.query(create)
             .then(() => db.query(seed))
@@ -61,6 +64,7 @@ module.exports = function application(
       })
       .catch(error => {
         console.log(`Error setting up the reset route: ${error}`);
+        response.status(500).send("Internal Server Error");
       });
   }
 

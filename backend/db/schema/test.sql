@@ -1,5 +1,5 @@
 -- Sample data for "USER" table
-INSERT INTO USER_ACCOUNT (FULLNAME, EMAIL, USER_PASSWORD) VALUES
+INSERT INTO "USER" (FULLNAME, EMAIL, USER_PASSWORD) VALUES
   ('John Doe', 'john.doe@example.com', '123'),
   ('Jane Smith', 'jane.smith@example.com', '123'),
   ('Alice Johnson', 'alice.johnson@example.com', '123');
