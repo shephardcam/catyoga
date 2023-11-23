@@ -12,8 +12,7 @@ const db = require("./db")
 
 const usersRouter = require("./routes/usersRouter");
 const yogaClassesRouter = require("./routes/yogaClassesRouter");
-// const photos = require("./routes/photos");
-// const topics = require("./routes/topics");
+
 
 function read(file) {
   return new Promise((resolve, reject) => {
@@ -36,13 +35,19 @@ module.exports = function application(
   app.use(cors());
   app.use(helmet());
   app.use(bodyparser.json());
-  app.use(express.static(path.join(__dirname, 'public')));
+  // app.use(express.static(path.join(__dirname, 'public')));
 
-  app.use(usersRouter(db));
-  app.use(yogaClassesRouter(db));
-  // app.use("/api", photos(db));
-  // app.use("/api", topics(db));
+  //mount routers
+  app.use("/api", usersRouter(db));
+  app.use("/api", yogaClassesRouter(db));
 
+
+  // test data
+  app.get("/api", (req, res) => {
+    res.json({"users": ['user1', 'user2', 'user3'] })
+  });
+
+  //initialize tables
   if (ENV === "development" || ENV === "test") {
     Promise.all([
       read(path.resolve(__dirname, `db/schema/create.sql`)),
