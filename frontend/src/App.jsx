@@ -47,12 +47,12 @@ function App() {
       
       </Router>
          
-        
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
 
-
+      {/* Test display database data */}
+      {/* Delete this if not using */}
       <h1>User List</h1>
       {isLoading ? (
         <p>Loading...</p>
