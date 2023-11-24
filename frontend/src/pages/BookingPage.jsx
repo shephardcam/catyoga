@@ -1,17 +1,22 @@
-import React from 'react';
-import YogaClassListItem from '../components/YogaListItem'; // Adjust the import path based on your project structure
+import React, { useState, useEffect } from 'react';
+import YogaList from '../components/YogaList'; // Adjust the import path based on your project structure
 
 const BookingPage = () => {
-  // Dummy data for the yoga classes
- 
+  const [yogaClasses, setYogaClasses] = useState([]);
+
+  useEffect(() => {
+
+    fetch('/booking')
+      .then((response) => response.json())
+      .then((data) => setYogaClasses(data))
+      .catch((error) => console.error('Error fetching yoga class data:', error));
+  }, []);
 
   return (
     <div>
       <h1>Booking Page</h1>
       <p>Select a yoga class to book:</p>
-      {yogaClasses.map((yogaClass, index) => (
-        <YogaClassListItem key={index} {...yogaClass} />
-      ))}
+      <YogaList yogaClasses={yogaClasses} />
     </div>
   );
 };

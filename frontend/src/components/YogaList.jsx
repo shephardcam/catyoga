@@ -3,12 +3,11 @@ import YogaListItem from './YogaListItem'; // Adjust the import path based on yo
 
 const YogaList = ({ yogaClasses }) => {
   return (
-    <div>
-      <h1>Yoga Class List</h1>
-      {yogaClasses.map((yogaClass, index) => (
-        <YogaListItem key={index} {...yogaClass} />
+    <ul className='Yoga-list'>
+      {yogaClasses.map((yogaClass) => (
+        <YogaListItem key={yogaClass.id} {...yogaClass} />
       ))}
-    </div>
+    </ul>
   );
 };
 
