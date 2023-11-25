@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import YogaList from '../components/YogaList'; 
+import YogaList from '../components/YogaList';
+import '../styles/BookingPage'
 
 const BookingPage = () => {
   const [yogaClasses, setYogaClasses] = useState([]);
