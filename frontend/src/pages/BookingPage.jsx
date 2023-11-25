@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import YogaList from '../components/YogaList'; // Adjust the import path based on your project structure
+import YogaList from '../components/YogaList'; 
 
 const BookingPage = () => {
   const [yogaClasses, setYogaClasses] = useState([]);
 
   useEffect(() => {
+    console.log("im here")
 
     fetch('/booking')
       .then((response) => response.json())
@@ -20,5 +21,6 @@ const BookingPage = () => {
     </div>
   );
 };
+
 
 export default BookingPage;
