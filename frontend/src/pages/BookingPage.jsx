@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import YogaList from '../components/YogaList';
-import '../styles/BookingPage'
+import '../styles/BookingPage.scss';
 
 const BookingPage = () => {
   const [yogaClasses, setYogaClasses] = useState([]);
 
   useEffect(() => {
-    console.log("im here")
+    console.log("I'm here");
 
-    fetch('/booking')
+    fetch('/api/booking')  // Updated the API endpoint to match the backend
       .then((response) => response.json())
       .then((data) => setYogaClasses(data))
       .catch((error) => console.error('Error fetching yoga class data:', error));
@@ -22,6 +22,5 @@ const BookingPage = () => {
     </div>
   );
 };
-
 
 export default BookingPage;
