@@ -17,7 +17,7 @@ const BookingPage = () => {
   return (
     <div>
       <h1>Booking Page</h1>
-      <p>Select a yoga class to book:</p>
+      <p>Select a yoga class to book.:</p>
       <YogaList yogaClasses={yogaClasses} />
     </div>
   );
