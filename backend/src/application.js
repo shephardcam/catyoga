@@ -12,6 +12,8 @@ const db = require("./db")
 
 const usersRouter = require("./routes/usersRouter");
 const yogaClassesRouter = require("./routes/yogaClassesRouter");
+const yogaClassInfoRoute = require("./routes/yogaClassInfoRoute");
+
 
 
 function read(file) {
@@ -40,6 +42,7 @@ module.exports = function application(
   //mount routers
   app.use("/api", usersRouter(db));
   app.use("/api", yogaClassesRouter(db));
+  app.use("/api", yogaClassInfoRoute(db));
 
 
   // test data

@@ -1,0 +1,43 @@
+
+
+.booking-page {
+  text-align: center;
+  padding: 20px;
+
+  h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .yoga-class-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+
+.yoga-class-card {
+  width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+
+  h2 {
+    font-size: 18px;
+    color: #3498db;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 14px;
+    color: #555;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

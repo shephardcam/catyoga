@@ -1,24 +1,41 @@
+// BookingPage.jsx
+// BookingPage.jsx
 import React, { useState, useEffect } from 'react';
 import YogaList from '../components/YogaList';
 import '../styles/BookingPage.scss';
 
 const BookingPage = () => {
-  const [yogaClasses, setYogaClasses] = useState([]);
+  const [yogaClassesInfo, setYogaClassesInfo] = useState([]);
+  const [isLoadingYogaClasses, setIsLoadingYogaClasses] = useState(true);
 
   useEffect(() => {
-    console.log("I'm here");
-
-    fetch('/api/booking')  // Updated the API endpoint to match the backend
+    // Fetch data from the Express API
+    fetch("/api/yoga-class-info")
       .then((response) => response.json())
-      .then((data) => setYogaClasses(data))
-      .catch((error) => console.error('Error fetching yoga class data:', error));
+      .then((data) => {
+        console.log(data); // Add this to log the fetched data
+        setYogaClassesInfo(data);
+        setIsLoadingYogaClasses(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching yoga class data:", error);
+        setIsLoadingYogaClasses(false);
+      });
   }, []);
 
+  const handleClassClick = (yogaClass) => {
+    console.log(`Clicked on yoga class: ${yogaClass.className}`);
+    // Add your logic for handling the click event
+  };
+
   return (
-    <div>
+    <div className="booking-page">
       <h1>Booking Page</h1>
-      <p>Select a yoga class to book:</p>
-      <YogaList yogaClasses={yogaClasses} />
+      {isLoadingYogaClasses ? (
+        <p>Loading yoga classes...</p>
+      ) : (
+        <YogaList yogaClasses={yogaClassesInfo} handleClassClick={handleClassClick} />
+      )}
     </div>
   );
 };
