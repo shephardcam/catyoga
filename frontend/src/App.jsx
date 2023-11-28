@@ -34,16 +34,16 @@ function App() {
       <Router>
         <TopNav />
         <Routes>
-          <Route exact path='/' element={<HomePage/>}/>
-          <Route path='/homepage' element={<HomePage/>}/>
-          <Route path='/booking' element={<BookingPage/>}/>
-          <Route path='/profile' element={<ProfilePage/>}/>
-          <Route path='/about' element={<AboutPage/>}/>
-          <Route path='/FAQ' element={<FAQPage/>}/>
-          <Route path='/waiver' element={<WaiverPage/>}/>
+          <Route exact path='/' element={<HomePage />} />
+          <Route path='/homepage' element={<HomePage />} />
+          <Route path='/yoga-class-info' element={<BookingPage yogaClasses={yogaClasses} />} />
+          <Route path='/profile' element={<ProfilePage />} />
+          <Route path='/about' element={<AboutPage />} />
+          <Route path='/FAQ' element={<FAQPage />} />
+          <Route path='/waiver' element={<WaiverPage />} />
           <Route path='/payment' element={<PaymentPage/>}/>
-        </Routes> 
-      
+        </Routes>
+
       </Router>
 
       <p>
