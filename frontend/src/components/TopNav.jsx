@@ -10,7 +10,7 @@ const TopNav = () => {
         <div className="nav-item" ><Link to='/about'>About</Link></div>
         <div className="nav-item"><Link to='/FAQ'>FAQ</Link></div>
         <div className="nav-item"><Link to='/Profile'>Profile</Link></div>
-        <div className="nav-item"><Link to='/yoga-classes'>December2023</Link></div>
+        <div className="nav-item"><Link to='/yoga-class-info'>December2023</Link></div>
       </nav>
     </div>
   );

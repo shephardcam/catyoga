@@ -13,7 +13,6 @@ function App() {
   const [users, setUsers] = useState([]);
   const [yogaClasses, setYogaClasses] = useState([]);
   const [isLoadingUsers, setIsLoadingUsers] = useState(true);
-  const [isLoadingYogaClasses, setIsLoadingYogaClasses] = useState(true);
 
   useEffect(() => {
     // Fetch user data from the Express API
@@ -26,20 +25,7 @@ function App() {
       .catch((error) => {
         console.error("Error fetching user data:", error);
         setIsLoadingUsers(false);
-      });
-
-    // Fetch yoga class data from the Express API
-    fetch("/api/yoga-classes")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data); // Add this to log the fetched data
-        setYogaClasses(data);
-        setIsLoadingYogaClasses(false);
       })
-      .catch((error) => {
-        console.error("Error fetching yoga class data:", error);
-        setIsLoadingYogaClasses(false);
-      });
   }, []);
 
   return (
@@ -49,7 +35,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<HomePage />} />
           <Route path='/homepage' element={<HomePage />} />
-          <Route path='/yoga-classes' element={<BookingPage yogaClasses={yogaClasses} />} />
+          <Route path='/yoga-class-info' element={<BookingPage yogaClasses={yogaClasses} />} />
           <Route path='/profile' element={<ProfilePage />} />
           <Route path='/about' element={<AboutPage />} />
           <Route path='/FAQ' element={<FAQPage />} />
@@ -75,18 +61,7 @@ function App() {
         </ul>
   
       )}
-      <h1>Classes List</h1>
-{isLoadingYogaClasses ? (
-  <p>Loading yoga classes...</p>
-) : (
-  <ul>
-    {yogaClasses.map((yogaClass) => (
-    <li key={yogaClass.id}>
-        <strong>{yogaClass.yoga_class_info_id}</strong> - {yogaClass.class_day}
-      </li>
-    ))}
-  </ul>
-)}
+
 
 
      
