@@ -8,6 +8,7 @@ import ProfilePage from './pages/ProfilePage';
 import AboutPage from './pages/AboutPage';
 import FAQPage from './pages/FAQPage';
 import WaiverPage from './pages/WaiverPage';
+import PaymentPage from './pages/PaymentPage';
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -33,15 +34,16 @@ function App() {
       <Router>
         <TopNav />
         <Routes>
-          <Route exact path='/' element={<HomePage />} />
-          <Route path='/homepage' element={<HomePage />} />
-          <Route path='/yoga-class-info' element={<BookingPage yogaClasses={yogaClasses} />} />
-          <Route path='/profile' element={<ProfilePage />} />
-          <Route path='/about' element={<AboutPage />} />
-          <Route path='/FAQ' element={<FAQPage />} />
-          <Route path='/waiver' element={<WaiverPage />} />
-        </Routes>
-
+          <Route exact path='/' element={<HomePage/>}/>
+          <Route path='/homepage' element={<HomePage/>}/>
+          <Route path='/booking' element={<BookingPage/>}/>
+          <Route path='/profile' element={<ProfilePage/>}/>
+          <Route path='/about' element={<AboutPage/>}/>
+          <Route path='/FAQ' element={<FAQPage/>}/>
+          <Route path='/waiver' element={<WaiverPage/>}/>
+          <Route path='/payment' element={<PaymentPage/>}/>
+        </Routes> 
+      
       </Router>
 
       <p>
