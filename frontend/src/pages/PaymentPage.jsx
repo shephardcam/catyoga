@@ -11,8 +11,6 @@ const PaymentPage = () => {
   const className = queryParams.get('name');
   const price = queryParams.get('price');
   const details = queryParams.get('details');
-  const duration = queryParams.get('duration');
-  const maxCapacity = queryParams.get('maxCapacity');
 
   return (
   <body>

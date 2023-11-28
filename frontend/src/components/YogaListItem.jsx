@@ -17,7 +17,7 @@ class YogaListItem extends React.Component {
         {maxCapacity ? (
           <p>Full</p>
         ) : (
-          <Link to={`/waiver?name=${className}&price=${price}&details=${details}&duration=${duration}`}>
+          <Link to={`/waiver?name=${className}&price=${price}&details=${details}`}>
             Purchase
           </Link>
         )}
