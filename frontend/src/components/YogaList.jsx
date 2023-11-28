@@ -1,6 +1,7 @@
 import React from 'react';
 import YogaListItem from './YogaListItem';
 
+
 const YogaList = ({ yogaClasses }) => {
   return (
     <div>
