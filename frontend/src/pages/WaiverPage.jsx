@@ -26,7 +26,7 @@ const WaiverPage = () => {
 
   const handleAgreeClick = () => {
     // Redirect to "/payment" with the same parameters
-    window.location.href = `/payment?name=${className}&price=${price}&details=${details}&duration=${duration}&maxCapacity=${maxCapacity}`;
+    window.location.href = `/payment?name=${className}&price=${price}&details=${details}`;
   };
 
   return (
