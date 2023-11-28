@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 
 import './App.scss';
 import TopNav from './components/TopNav'
@@ -11,6 +12,24 @@ import WaiverPage from './pages/WaiverPage';
 
 
 function App() {
+
+  const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Fetch data from the Express API
+    fetch("/api/users")
+      .then((response) => response.json())
+      .then((data) => {
+        setUsers(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setIsLoading(false);
+      });
+  }, []); // The empty dependency array ensures the effect runs only once, similar to componentDidMount
+
   return (
     
     <div className="App">
@@ -28,10 +47,25 @@ function App() {
       
       </Router>
          
-        
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+
+      {/* Test display database data */}
+      {/* Delete this if not using */}
+      <h1>User List</h1>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <ul>
+          {users.map((user) => (
+            <li key={user.id}>
+              <strong>{user.fullname}</strong> - {user.email}
+            </li>
+          ))}
+        </ul>
+      )}
+
     </div>
   );
 }

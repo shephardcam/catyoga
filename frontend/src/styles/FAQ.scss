@@ -1,0 +1,18 @@
+.faq-question {
+    display: flex;
+    font-size: 1.5em;  
+    color: #000000;
+    -ms-flex-align: start;
+    margin-left: 4em;
+}
+
+.faq-header {
+    font-size: 2em;
+    margin: 0 10em;
+    padding: 1em;
+}
+
+.faq-answer {
+    margin: 0 10em;
+    padding-bottom: 3em;
+}
