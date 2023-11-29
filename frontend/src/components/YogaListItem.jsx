@@ -1,20 +1,19 @@
 import React from 'react';
 
-class YogaListItem extends React.Component {
-  render() {
-    const { className, price, details, duration, maxCapacity} = this.props;
+import '../styles/yogaListItem.scss';
 
-    return (
-      <div className="YogaListItem">
-        <h3>Yoga Class</h3>
-        <p>name: {className}</p>
-        <p>price: {price}</p>
-        <p>Is Max Capacity: {maxCapacity}</p>
-        <p>details:{details}</p>
-        <p>duration: {duration}</p>
-      </div>
-    );
-  }
-}
+const YogaListItem = ({ className, price, maxCapacity, details, duration, classDay, startTime, isMaxCapacity}) => {
+  return (
+    <li className={`Yoga-list-item ${className}`}>
+      <h3>{className}</h3>
+      <p>Price: ${price}</p>
+      <p>Max Capacity: {maxCapacity}</p>
+      <p>Details: {details}</p>
+      <p>Duration: {duration} minutes</p>
+      <h2>{classDay}{startTime} {isMaxCapacity}</h2>
+    </li>
+  );
+};
+
 
 export default YogaListItem;

@@ -1,0 +1,12 @@
+.titel-yoga {
+  // Styles for the "Yoga Classes" heading
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+
+  .Yoga-list-item {
+    @import './yogaListItem.scss'; // Import the SCSS file for the list item
+  }
+}
