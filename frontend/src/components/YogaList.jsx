@@ -2,6 +2,7 @@ import React from 'react';
 import YogaListItem from './YogaListItem';
 import '../styles/yogaList.scss';
 
+
 const YogaList = ({ yogaClasses }) => {
   return (
     <div>

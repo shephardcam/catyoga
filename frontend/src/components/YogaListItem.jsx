@@ -1,19 +1,32 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import '../styles/yogaListItem.scss';
 
-const YogaListItem = ({ className, price, maxCapacity, details, duration, classDay, startTime, isMaxCapacity}) => {
-  return (
-    <li className={`Yoga-list-item ${className}`}>
-      <h3>{className}</h3>
-      <p>Price: ${price}</p>
-      <p>Max Capacity: {maxCapacity}</p>
-      <p>Details: {details}</p>
-      <p>Duration: {duration} minutes</p>
-      <h2>{classDay}{startTime} {isMaxCapacity}</h2>
-    </li>
-  );
-};
+class YogaListItem extends React.Component {
+  render() {
+    const {className, price, maxCapacity, details, duration, classDay, startTime, isMaxCapacity } = this.props;
+
+    return (
+      <div className="YogaListItem">
+        <h3>Yoga Class</h3>
+        <p>name: {className}</p>
+        <p>price: {price}</p>
+        <p>Is Max Capacity: {maxCapacity}</p>
+        <p>details: {details}</p>
+        <p>duration: {duration}</p>
+        <h2>{classDay}{startTime} {isMaxCapacity}</h2>
+        
+        {maxCapacity ? (
+          <p>Full</p>
+        ) : (
+          <Link to={`/waiver?name=${className}&price=${price}&details=${details}`}>
+            Purchase
+          </Link>
+        )}
+      </div>
+    );
+  }
+}
 
 
 export default YogaListItem;
