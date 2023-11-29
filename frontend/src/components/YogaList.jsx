@@ -12,9 +12,13 @@ const YogaList = ({ yogaClasses }) => {
             key={yogaClassData.id}
             className={yogaClassData.class_name}
             price={yogaClassData.price}
-            isMaxCapacity={yogaClassData.maxCapacity}
+            maxCapacity={yogaClassData.max_capacity}
             details={yogaClassData.details}
             duration={yogaClassData.duration}
+            classInfoId={yogaClassData.classInfoId}
+            classDay={yogaClassData.class_day}
+            startTime={yogaClassData.start_time}
+            isMaxCapacity={yogaClassData.is_max_capacity}
           />
         ))}
       </ul>

@@ -28,12 +28,36 @@ const BookingPage = () => {
     fetchData();
   }, []);
 
+  const customLogic = (yogaClasses, yogaClassInfo) => {
+    const matchedData = [];
+  
+    yogaClasses.forEach((classItem) => {
+      const matchingInfo = yogaClassInfo.find((infoItem) => infoItem.id === classItem.yoga_class_info_id);
+  // console.log("matchingInfo",matchingInfo)
+      if (matchingInfo) {
+        matchedData.push({
+          ...classItem,
+          ...matchingInfo
+        });
+      }
+    });
+  
+    // console.log('yogaClasses:', yogaClasses);
+    // console.log('yogaClassInfo:', yogaClassInfo);
+    // console.log('matchedData:', matchedData);
+  
+    return matchedData;
+  };
+
+  const matchedData = customLogic(yogaClasses, yogaClassInfo);
+  console.log('matchedData:', matchedData);
+
   return (
     <div className="booking-page">
       {isLoading ? (
         <p>Loading yoga classes...</p>
       ) : (
-        <YogaList className="yoga-list" yogaClasses={yogaClassInfo} />
+        <YogaList className="yoga-list" yogaClasses={matchedData} />
       )}
     </div>
   );
