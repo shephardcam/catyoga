@@ -26,7 +26,7 @@ module.exports = (db) => {
     }
   });
 
-  // Add more routes for yoga classes CRUD operations
+
 
   return yogaClassesRouter;
 };

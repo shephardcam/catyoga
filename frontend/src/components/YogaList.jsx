@@ -1,11 +1,12 @@
 import React from 'react';
 import YogaListItem from './YogaListItem';
+import '../styles/yogaList.scss';
 
 const YogaList = ({ yogaClasses }) => {
   return (
     <div>
-      <h2>Yoga Classes</h2>
-      <ul className='Yoga-list'>
+      <h2 class_name ="titel-yoga">Yoga Classes </h2>
+      <ul >
         {yogaClasses.map((yogaClassData) => (
           <YogaListItem
             key={yogaClassData.id}
@@ -17,6 +18,7 @@ const YogaList = ({ yogaClasses }) => {
           />
         ))}
       </ul>
+      <p></p>
     </div>
   );
 };
