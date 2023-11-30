@@ -13,16 +13,14 @@ class YogaListItem extends React.Component {
         <p>price: {price}</p>
         <p>Is Max Capacity: {maxCapacity}</p>
         <p>details: {details}</p>
-        <p>duration: {duration}</p>
-        <h2>{classDay}{startTime} {isMaxCapacity}</h2>
-        
-        {maxCapacity ? (
-          <p>Full</p>
-        ) : (
+        <p>duration: {duration}</p> 
           <Link to={`/waiver?name=${className}&price=${price}&details=${details}`}>
             Purchase
           </Link>
-        )}
+        <h2>{classDay}{startTime} {isMaxCapacity}</h2>
+       
+       
+  
       </div>
     );
   }
