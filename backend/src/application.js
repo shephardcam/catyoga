@@ -13,6 +13,7 @@ const db = require("./db")
 const usersRouter = require("./routes/usersRouter");
 const yogaClassesRouter = require("./routes/yogaClassesRouter");
 const yogaClassInfoRoute = require("./routes/yogaClassInfoRoute");
+const registeredClassesRouter = require("./routes/registeredClassesRouter");
 
 
 
@@ -43,6 +44,7 @@ module.exports = function application(
   app.use("/api", usersRouter(db));
   app.use("/api", yogaClassesRouter(db));
   app.use("/api", yogaClassInfoRoute(db));
+  app.use("/api", registeredClassesRouter(db));
 
 
   // test data
