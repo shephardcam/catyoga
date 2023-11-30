@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useYogaContext } from '../components/YogaContext';
 import '../styles/waiver.scss';
 
 const downloadPdf = () => {
@@ -11,32 +12,30 @@ const downloadPdf = () => {
 };
 
 const WaiverPage = () => {
-  const location = useLocation();
+  const { state } = useYogaContext();
+  const { setYogaData } = useYogaContext();
+  console.log(state); 
+  const { className, price, details } = state;
 
   useEffect(() => {
     downloadPdf();
   }, []);
 
-  const { search } = location || {}; // Check if location is available
-  const queryParams = new URLSearchParams(search);
-
-  const className = queryParams.get('name');
-  const price = queryParams.get('price');
-  const details = queryParams.get('details');
-
   const handleAgreeClick = () => {
-    // Redirect to "/payment" with the same parameters
-    window.location.href = `/payment?name=${className}&price=${price}&details=${details}`;
+    setYogaData({ className, price, details });
   };
 
   return (
     <main>
       <h2 className='header'>Read and agree to our waiver to continue.</h2>
       <embed src="/Waiver.pdf" type="application/pdf" width="100%" height="600px" />
-
-      <div className='buttons'> 
+      <div className='buttons'>
         <a href="/">Cancel</a>
-        <a onClick={handleAgreeClick}>Agree</a>
+        <a onClick={handleAgreeClick}>
+      <Link to="/payment">
+        agree and checkout
+      </Link>
+      </a>
       </div>
     </main>
   );
