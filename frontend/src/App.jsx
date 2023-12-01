@@ -12,6 +12,7 @@ import WaiverPage from './pages/WaiverPage';
 import PaymentPage from './pages/PaymentPage';
 import Login from './components/Login';
 import Registration from './components/Registration';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -85,10 +86,11 @@ function App() {
             <Route path='/payment' element={<PaymentPage/>}/>
           </Routes>
         ) : (
-          <>
-            <Login onLogin={handleLogin} />
-            <Registration onRegistration={handleRegistration} />
-          </>
+          <Routes>
+            <Route path='/login' element={<LoginPage onLogin={handleLogin} onRegistration={handleRegistration}/>} />
+            {/* <Login onLogin={handleLogin} />
+            <Registration onRegistration={handleRegistration} /> */}
+          </Routes>
         )}
 
       </Router>
