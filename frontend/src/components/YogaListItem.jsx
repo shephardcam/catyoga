@@ -1,13 +1,15 @@
 import React from 'react';
 import '../styles/yogaListItem.scss';
-import BookingButton from './BookingButton';
 import { useYogaContext } from './YogaContext';
 import { Link } from 'react-router-dom';
 
 const YogaListItem = ({ className, price, details, duration, classDay, startTime, isMaxCapacity, maxCapacity }) => {
   const { setYogaData } = useYogaContext();
 
-  
+  const handlePurchaseClick = () => {
+    setYogaData({ className, price, details });
+  };
+
   return (
     <div className="YogaListItem">
       <h2>{classDay}{startTime} {isMaxCapacity}</h2>
