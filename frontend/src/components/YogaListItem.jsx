@@ -18,11 +18,15 @@ const YogaListItem = ({ className, price, details, duration, classDay, startTime
       <p>Is Max Capacity: {maxCapacity}</p>
       <p>details: {details}</p>
       <p>duration: {duration}</p>
-      <button onClick={handlePurchaseClick}>
-      <Link to="/waiver">
-        Purchase
-      </Link>
-      </button>
+      {isMaxCapacity ? (
+        <p>Class Full!</p>
+      ) : (
+        <button onClick={handlePurchaseClick}>
+          <Link to="/waiver">
+            Purchase
+          </Link>
+        </button>
+      )}
     </div>
   );
 };
