@@ -12,7 +12,7 @@ const BookingButton = ({ className, price, details }) => {
   return (
     <button className="button" onClick={handleButtonClick}>
        <Link to={`/waiver?name=${className}&price=${price}&details=${details}`}>
-              Purchase
+              Book
             </Link>
     </button>
   );

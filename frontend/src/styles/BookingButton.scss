@@ -1,15 +1,13 @@
-.button {
-  margin-top: 10px;
-  padding: 10px 15px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 16px;
-}
 
-.button:hover {
-  background-color: #45a049;
-}
+  .button {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #ff6565;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #ff3939;
+    }
+  }
