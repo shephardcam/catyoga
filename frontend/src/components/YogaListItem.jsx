@@ -1,11 +1,6 @@
 import React from 'react';
-
 import '../styles/yogaListItem.scss';
 import BookingButton from './BookingButton'
-
-
-const YogaListItem = ({ className, price, details, duration, classDay, startTime, isMaxCapacity }) => {
-  
 
 
 class YogaListItem extends React.Component {
