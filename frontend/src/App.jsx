@@ -22,33 +22,25 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      // fetch user informatyion using token
-      axios
-        .get('api/user', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
-        .then((response) => {
-          const loggedInUser = response.data;
-          setUser(loggedInUser);
-        })
-        .catch((error) => {
-          console.error('Error fethcing user data:', error);
-        });
-    }
+    // Retrieve user information from the cookie
+    const userCookie = document.cookie.replace(/(?:(?:^|.*;\s*)user\s*=\s*([^;]*).*$)|^.*$/, '$1');
+    const parsedUser = userCookie ? JSON.parse(decodeURIComponent(userCookie)) : null;
+
+    setUser(parsedUser);
   }, []);
 
-  const handleLogin = (loggedInUser) => {
+  const handleLogin = async (loggedInUser) => {
+    // Set a cookie with the user information
+    document.cookie = `user=${JSON.stringify(loggedInUser)}; path=/`;
+
     setUser(loggedInUser);
-    localStorage.setItem('token', 'dummyTOken');
   };
 
   const handleLogout = () => {
+    // Remove the user cookie
+    document.cookie = 'user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
     setUser(null);
-    localStorage.removeItem('token');
   };
 
   const handleRegistration = async (userData) => {
@@ -58,6 +50,7 @@ function App() {
       setUser(newUser);
     } catch (error) {
       console.error('Registration failed:', error);
+      // Handle registration failure, e.g., show an error message
     }
   };
 

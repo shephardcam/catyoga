@@ -1,3 +1,4 @@
+// Login.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -8,10 +9,10 @@ const Login = ({ onLogin }) => {
   const handleLogin = async () => {
     try {
       const response = await axios.post('/api/login', { email, password });
-      const { user, token } = response.data;
+      const { user } = response.data;
 
-      // Store the token in localStorage for future requests
-      localStorage.setItem('token', token);
+      // Set a cookie with the user information
+      document.cookie = `user=${JSON.stringify(user)}; path=/`;
 
       onLogin(user);
     } catch (error) {
