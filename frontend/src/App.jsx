@@ -87,9 +87,7 @@ function App() {
           </Routes>
         ) : (
           <Routes>
-            <Route path='/login' element={<LoginPage onLogin={handleLogin} onRegistration={handleRegistration}/>} />
-            {/* <Login onLogin={handleLogin} />
-            <Registration onRegistration={handleRegistration} /> */}
+            <Route path='/login' element={<LoginPage handleLogin={handleLogin} handleRegistration={handleRegistration}/>} />
           </Routes>
         )}
 
