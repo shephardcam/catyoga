@@ -7,6 +7,7 @@ const HomePage = () => {
   return (
     <div className="cat-container">
       {/* <video src="/videos/video-1.0.mp4" autoPlay loop muted /> */}
+      <img src={`${process.env.PUBLIC_URL} /images/image-1.png`} />
       <h1>RELAXATION AWAITS</h1>
       <p>"Unwind and rejuvenate, <br/> with a delightful yoga session accompanied by playful cats, <br/> a perfect blend to soothe your body and mind!" <i className="fa-solid fa-cat"/></p>
 
