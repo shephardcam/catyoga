@@ -1,30 +1,32 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useYogaContext } from './YogaContext';
+
+import '../styles/yogaListItem.scss';
+import BookingButton from './BookingButton'
+
 
 const YogaListItem = ({ className, price, details, duration, classDay, startTime, isMaxCapacity }) => {
-  const { setYogaData } = useYogaContext();
+  
 
-  const handlePurchaseClick = () => {
-    setYogaData({ className, price, details });
-  };
 
-  return (
-    <div className="YogaListItem">
-      <h2>{classDay}{startTime} {isMaxCapacity}</h2>
-      <h3>Yoga Class</h3>
-      <p>name: {className}</p>
-      <p>price: {price}</p>
-      <p>Is Max Capacity: {isMaxCapacity}</p>
-      <p>details: {details}</p>
-      <p>duration: {duration}</p>
-      <button onClick={handlePurchaseClick}>
-      <Link to="/waiver">
-        Purchase
-      </Link>
-      </button>
-    </div>
-  );
-};
+class YogaListItem extends React.Component {
+
+  render() {
+    const { className, price, maxCapacity, details, duration, classDay, startTime, isMaxCapacity } = this.props;
+
+    return (
+      <div className="Yoga-list-item">
+        <h3>Yoga Class</h3>
+        <p>name: {className}</p>
+        <p>price: {price}</p>
+        <p>Is Max Capacity: {maxCapacity}</p>
+        <p>details: {details}</p>
+        <p>duration: {duration}</p>
+        <h2>{classDay} {startTime} {isMaxCapacity}</h2>
+
+           <BookingButton className={className} classDay={details} startTime={price} />
+      </div>
+    );
+  }
+}
 
 export default YogaListItem;
