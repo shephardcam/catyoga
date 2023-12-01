@@ -10,8 +10,7 @@ class YogaListItem extends React.Component {
 
     return (
       <div className="Yoga-list-item">
-        <h3>Yoga Class</h3>
-        <p>name: {className}</p>
+        <h3> {className}</h3>
         <p>price: {price}</p>
         <p>Is Max Capacity: {maxCapacity}</p>
         <p>details: {details}</p>
