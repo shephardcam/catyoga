@@ -1,10 +1,12 @@
 // Login.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate()
 
   const handleLogin = async () => {
     try {
@@ -15,6 +17,10 @@ const Login = ({ onLogin }) => {
       document.cookie = `user=${JSON.stringify(user)}; path=/`;
 
       onLogin(user);
+
+      // Redirect to homepage
+      navigate('/homepage');
+
     } catch (error) {
       console.error('Login failed:', error);
       // Handle login failure, e.g., show an error message
