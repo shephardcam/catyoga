@@ -42,10 +42,6 @@ const BookingPage = () => {
       }
     });
   
-    // console.log('yogaClasses:', yogaClasses);
-    // console.log('yogaClassInfo:', yogaClassInfo);
-    // console.log('matchedData:', matchedData);
-  
     return matchedData;
   };
 
