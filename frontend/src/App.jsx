@@ -23,7 +23,7 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Retrieve user information from the cookie
+    // Get user info from the cookie
     const userCookie = document.cookie.replace(/(?:(?:^|.*;\s*)user\s*=\s*([^;]*).*$)|^.*$/, '$1');
     const parsedUser = userCookie ? JSON.parse(decodeURIComponent(userCookie)) : null;
 
@@ -31,14 +31,14 @@ function App() {
   }, []);
 
   const handleLogin = async (loggedInUser) => {
-    // Set a cookie with the user information
+    // Set cookie with the user info
     document.cookie = `user=${JSON.stringify(loggedInUser)}; path=/`;
 
     setUser(loggedInUser);
   };
 
   const handleLogout = () => {
-    // Remove the user cookie
+    // Remove user cookie
     document.cookie = 'user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
 
     setUser(null);
@@ -51,7 +51,6 @@ function App() {
       setUser(newUser);
     } catch (error) {
       console.error('Registration failed:', error);
-      // Handle registration failure, e.g., show an error message
     }
   };
 

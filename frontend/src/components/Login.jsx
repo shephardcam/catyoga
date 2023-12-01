@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
@@ -12,7 +12,7 @@ const Login = ({ onLogin }) => {
       const response = await axios.post('/api/login', { email, password });
       const { user } = response.data;
 
-      // Set a cookie with the user information
+      // Set cookie with user info
       document.cookie = `user=${JSON.stringify(user)}; path=/`;
 
       onLogin(user);
@@ -22,7 +22,6 @@ const Login = ({ onLogin }) => {
 
     } catch (error) {
       console.error('Login failed:', error);
-      // Handle login failure, e.g., show an error message
     }
   };
 

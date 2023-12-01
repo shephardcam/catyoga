@@ -72,8 +72,6 @@ module.exports = (db) => {
       res.status(500).json({ error: "Internal Server Error" });
     }
   });
-
-  // Add more routes for other CRUD operations
-
+  
   return usersRouter;
 };

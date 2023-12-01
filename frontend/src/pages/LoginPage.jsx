@@ -12,4 +12,4 @@ const LoginPage = ({ handleLogin, handleRegistration }) => {
   );
 };
 
-export default LoginPage
+export default LoginPage;
