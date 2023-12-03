@@ -7,6 +7,7 @@ const BookingPage = () => {
   const [yogaClasses, setYogaClasses] = useState([]);
   const [yogaClassInfo, setYogaClassInfo] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [bookingStatus, setBookingStatus] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,10 +31,10 @@ const BookingPage = () => {
 
   const customLogic = (yogaClasses, yogaClassInfo) => {
     const matchedData = [];
-  
+
     yogaClasses.forEach((classItem) => {
       const matchingInfo = yogaClassInfo.find((infoItem) => infoItem.id === classItem.yoga_class_info_id);
-  // console.log("matchingInfo",matchingInfo)
+
       if (matchingInfo) {
         matchedData.push({
           ...classItem,
@@ -41,19 +42,34 @@ const BookingPage = () => {
         });
       }
     });
-  
+
     return matchedData;
   };
 
   const matchedData = customLogic(yogaClasses, yogaClassInfo);
-  console.log('matchedData:', matchedData);
+
+  const handleBookClass = async (yogaClassId) => {
+    try {
+      const response = await axios.post('/api/BookingPage', {
+        yogaClassId: yogaClassId,
+      });
+
+      setBookingStatus(response.data.status);
+    } catch (error) {
+      console.error('Error booking yoga class:', error);
+      setBookingStatus('Error');
+    }
+  };
 
   return (
     <div className="booking-page">
       {isLoading ? (
         <p>Loading yoga classes...</p>
       ) : (
-        <YogaList className="yoga-list" yogaClasses={matchedData} />
+        <>
+          <YogaList className="yoga-list" yogaClasses={matchedData} />
+          {bookingStatus && <p>{bookingStatus}</p>}
+        </>
       )}
     </div>
   );
