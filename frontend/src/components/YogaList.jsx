@@ -3,7 +3,7 @@ import YogaListItem from './YogaListItem';
 import '../styles/yogaList.scss';
 
 
-const YogaList = ({ yogaClasses }) => {
+const YogaList = ({ yogaClasses, user }) => {
   return (
     <div>
       <h2 class_name ="titel-yoga">Yoga Classes </h2>
@@ -20,6 +20,7 @@ const YogaList = ({ yogaClasses }) => {
             classDay={yogaClassData.class_day}
             startTime={yogaClassData.start_time}
             isMaxCapacity={yogaClassData.is_max_capacity}
+            user={user}
           />
         ))}
       </ul>

@@ -3,7 +3,7 @@ import '../styles/yogaListItem.scss';
 import { useYogaContext } from './YogaContext';
 import { Link } from 'react-router-dom';
 
-const YogaListItem = ({ className, price, details, duration, classDay, startTime, isMaxCapacity, maxCapacity }) => {
+const YogaListItem = ({ className, price, details, duration, classDay, startTime, isMaxCapacity, maxCapacity, user }) => {
   const { setYogaData } = useYogaContext();
 
   const handlePurchaseClick = () => {
@@ -19,12 +19,21 @@ const YogaListItem = ({ className, price, details, duration, classDay, startTime
       <p>Is Max Capacity: {maxCapacity}</p>
       <p>details: {details}</p>
       <p>duration: {duration}</p>
-      {isMaxCapacity ? (
-        <p>Class Full!</p>
+  
+      {user ? (
+        isMaxCapacity ? (
+          <p>Class Full!</p>
+        ) : (
+          <button onClick={handlePurchaseClick}>
+            <Link to="/waiver">
+              Purchase
+            </Link>
+          </button>
+        )
       ) : (
-        <button onClick={handlePurchaseClick}>
-          <Link to="/waiver">
-            Purchase
+        <button>
+          <Link to="/login">
+            Login
           </Link>
         </button>
       )}
