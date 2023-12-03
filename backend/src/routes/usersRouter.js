@@ -57,11 +57,11 @@ module.exports = (db) => {
     const { email, password } = req.body;
 
     try {
-      // Perform authentication logic (replace this with your actual authentication logic)
+      // Authentication
       const user = await db.query('SELECT * FROM USER_ACCOUNT WHERE EMAIL = $1 AND USER_PASSWORD = $2', [email, password]);
 
       if (user.rows.length > 0) {
-        // Authentication successful
+        // Authentication success
         res.json({ user: user.rows[0], token: 'yourAccessToken' });
       } else {
         // Authentication failed
