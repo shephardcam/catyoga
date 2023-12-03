@@ -45,7 +45,7 @@ const TopNav = () => {
         </li>
         <li className='nav-item'>
           <Link to='/about' className='nav-links' onClick={closeMobileMenu}>
-            About Us
+            About 
           </Link>
         </li>
         <li className='nav-item'>
@@ -71,8 +71,9 @@ const TopNav = () => {
           </Link>
         </li>
       </ul>
-      {button && <Button buttonStyle='btn--outline'>Book Now</Button>}
-      {button && <Button buttonStyle='btn--outline'>Login</Button>}
+      {button && <Button className="btn--outline" buttonStyle='btn--outline'>Book Now</Button>}
+      
+      {button && <Button className="btn--outline" buttonStyle='btn--outline'>Login</Button>}
       </div>
     </nav>
     </>

@@ -1,5 +1,4 @@
 .topNav {
-  // background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
   background: lightcoral;
   height: 80px;
   display: flex;
@@ -41,7 +40,7 @@
   grid-gap: 10px;
   list-style: none;
   text-align: center;
-  width: 55vw;
+  width: 50vw;
   justify-content: end;
   margin-right: 2rem;
 }
@@ -75,6 +74,19 @@
 .menu-icon {
   display: none;
 }
+.btn--outline {
+  display: inline-block;
+  margin: 0 10px
+}
+
+.nav-item {
+  height: 80px;
+
+&:nth-last-child(-n+2) {
+  display: inline-block;
+  margin-right: 20px;
+  }
+}
 
 @media screen and (max-width: 960px) {
   .TopNavItems {
@@ -94,7 +106,6 @@
   }
 
   .nav-menu.active {
-    // background: #242222;
     background: lightcoral;
     left: 0;
     opacity: 1;
@@ -157,4 +168,14 @@
     color: #242424;
     transition: 250ms;
   }
+
+  .nav-links-mobile {
+    display: block;
+  }
+
+  .btn--outline {
+    display: block;
+    margin: 10px auto;
+  }
+
 }
