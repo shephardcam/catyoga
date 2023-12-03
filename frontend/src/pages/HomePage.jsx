@@ -3,6 +3,7 @@ import "../App.scss";
 import "../styles/HomePage.scss";
 import { Button } from "../components/Button";
 import Cards from "../components/Cards";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (
@@ -20,7 +21,7 @@ const HomePage = () => {
         <div className="cat-btns">
           <Button
             className="btn"
-            buttonStyle="btn--outline"
+            buttonStyle="btn--primary"
             buttonSize="btn--large"
           >
             Book Now <i className="fa-solid fa-cat" />
@@ -30,7 +31,7 @@ const HomePage = () => {
     </div>
 
     <Cards />
-    
+    <Footer />
     </>
   );
 };
