@@ -2,9 +2,11 @@ import React from "react";
 import "../App.scss";
 import "../styles/HomePage.scss";
 import { Button } from "../components/Button";
+import Cards from "../components/Cards";
 
 const HomePage = () => {
   return (
+    <>
       <div className="cat-container">
         <video src="/videos/video-1.1.mp4" autoPlay loop muted />
         {/* <img src={`${process.env.PUBLIC_URL} /images/image-1.png`} /> */}
@@ -30,6 +32,8 @@ const HomePage = () => {
       <img src={`${process.env.PUBLIC_URL} /images/cat yoga.jpeg`} />
     <img src={`${process.env.PUBLIC_URL} /images/cat.jpeg`} />      */}
     </div>
+    <Cards />
+    </>
   );
 };
 
