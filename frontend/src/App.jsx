@@ -11,6 +11,7 @@ import FAQPage from './pages/FAQPage';
 import WaiverPage from './pages/WaiverPage';
 import PaymentPage from './pages/PaymentPage';
 import LoginPage from './pages/LoginPage';
+import ThankYouPage from './pages/ThankYouPage';
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -84,6 +85,7 @@ function App() {
           <Route path='/yoga-class-info' element={<BookingPage yogaClasses={yogaClasses} />} />
           <Route path='/waiver' element={<WaiverPage />} />
           <Route path='/payment' element={<PaymentPage/>}/>
+          <Route path='/thankyou' element={<ThankYouPage/>}/>
         </Routes>
       ) : (
         // Pages accessible when not logged in (notice that waiver and payment will not load when not logged in)

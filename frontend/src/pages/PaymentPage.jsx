@@ -2,6 +2,7 @@ import React from 'react';
 import { CardElement } from '@stripe/react-stripe-js';
 import { useYogaContext } from '../components/YogaContext';
 import '../styles/payment.scss';
+import { Link } from 'react-router-dom';
 
 const PaymentPage = () => {
   const { state } = useYogaContext();
@@ -21,7 +22,9 @@ const PaymentPage = () => {
           <CardElement />
         </div>
         <button type="submit" className="submit-button">
-          Submit
+        <Link to="/thankyou">
+        checkout
+      </Link>
         </button>
       </form>
     </body>
