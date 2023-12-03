@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <>
       <div className="cat-container">
-        <video src="/videos/video-1.1.mp4" autoPlay loop muted />
+        <video src="/videos/video-2.mp4" autoPlay loop muted />
         {/* <img src={`${process.env.PUBLIC_URL} /images/image-1.png`} /> */}
         <h1>RELAXATION AWAITS</h1>
         <p>
@@ -27,12 +27,10 @@ const HomePage = () => {
           </Button>
         </div>
 
-      {/* <img className="catSleep" src={`${process.env.PUBLIC_URL} /images/catSleep.ipeg`} />
-      <img src={`${process.env.PUBLIC_URL} /images/cat yoga pose.webp`} />
-      <img src={`${process.env.PUBLIC_URL} /images/cat yoga.jpeg`} />
-    <img src={`${process.env.PUBLIC_URL} /images/cat.jpeg`} />      */}
     </div>
+
     <Cards />
+    
     </>
   );
 };
