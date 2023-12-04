@@ -22,7 +22,7 @@ export default function Cards() {
              
             />
             <CardItem
-              src='images/img-3.jpeg'
+              src='images/img-10.jpg'
               text='Set Sail in the Atlantic Ocean visiting Uncharted Waters'
               label='Mystery'
               
@@ -30,13 +30,13 @@ export default function Cards() {
           </ul>
           <ul className='cards__items'>
             <CardItem
-              src='images/img-4.jpeg'
+              src='images/img-3.jpeg'
               text='Experience Football on Top of the Himilayan Mountains'
               label='Adventure'
               
             />
             <CardItem
-              src='images/img-5.avif'
+              src='images/img-11.jpg'
               text='Ride through the Sahara Desert on a guided camel tour'
               label='Adrenaline'
              
@@ -50,19 +50,19 @@ export default function Cards() {
           </ul>
           <ul className='cards__items'>
             <CardItem
-              src='images/img-4.jpeg'
+              src='images/img-7.jpg'
               text='Experience Football on Top of the Himilayan Mountains'
               label='Adventure'
               
             />
             <CardItem
-              src='images/img-5.avif'
+              src='images/img-8.jpg'
               text='Ride through the Sahara Desert on a guided camel tour'
               label='Adrenaline'
              
             />
             <CardItem
-              src='images/img-6.jpeg'
+              src='images/img-9.jpg'
               text='Ride through the Sahara Desert on a guided camel tour'
               label='Adrenaline'
              
