@@ -14,7 +14,7 @@ const YogaList = ({ yogaClasses, user, yogaClassInfo }) => {
   return (
     <div>
       <h2 class_name ="titel-yoga">Yoga Classes </h2>
-      <ul >
+      <ul className='yogalist'>
         {yogaClasses.map((yogaClassData) => (
           <YogaListItem
             // from yoga_classes
