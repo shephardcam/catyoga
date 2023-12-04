@@ -11,19 +11,19 @@ export default function Cards() {
           <ul className='cards__items'>
             <CardItem
               src='images/img-1.png'
-              text='Explore the hidden waterfall deep inside the Amazon Jungle'
+              text='The essence of contentment featuring a blissful cat lounging comfortably'
               label='Adventure'
              
             />
             <CardItem
               src='images/img-2.webp'
-              text='Travel through the Islands of Bali in a Private Cruise'
+              text='A poised feline gracefully stretching, embodying the spirit of relaxation'
               label='Luxury'
              
             />
             <CardItem
               src='images/img-10.jpg'
-              text='Set Sail in the Atlantic Ocean visiting Uncharted Waters'
+              text='A moment of collective tranquility, a shared journey towards relaxation and spiritual connection, away from the hustle of daily life.'
               label='Mystery'
               
             />
@@ -31,19 +31,19 @@ export default function Cards() {
           <ul className='cards__items'>
             <CardItem
               src='images/img-3.jpeg'
-              text='Experience Football on Top of the Himilayan Mountains'
+              text='A playful kitten in the midst of a stretch, mirroring a yoga pose with natural grace.'
               label='Adventure'
               
             />
             <CardItem
               src='images/img-11.jpg'
-              text='Ride through the Sahara Desert on a guided camel tour'
+              text='A carefree moment under the sun that reflects the spirited and spontaneous nature of feline companions.'
               label='Adrenaline'
              
             />
             <CardItem
               src='images/img-6.jpeg'
-              text='Ride through the Sahara Desert on a guided camel tour'
+              text='Ginger cat sitting regally like a wise instructor or a curious observer.'
               label='Adrenaline'
              
             />
@@ -51,19 +51,19 @@ export default function Cards() {
           <ul className='cards__items'>
             <CardItem
               src='images/img-7.jpg'
-              text='Experience Football on Top of the Himilayan Mountains'
+              text='A moment of joy and relaxation'
               label='Adventure'
               
             />
             <CardItem
               src='images/img-8.jpg'
-              text='Ride through the Sahara Desert on a guided camel tour'
+              text='A heartwarming image capturing an intimate moment between two cats sharing a gentle nuzzle, symbolizing affection and companionship.'
               label='Adrenaline'
              
             />
             <CardItem
               src='images/img-9.jpg'
-              text='Ride through the Sahara Desert on a guided camel tour'
+              text='A highlight into shared experience of wellness and mindfulness.'
               label='Adrenaline'
              
             />
