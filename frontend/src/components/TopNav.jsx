@@ -4,16 +4,79 @@ import { Link } from 'react-router-dom';
 import { Button } from './Button';
 
 const TopNav = () => {
+
+  const [click, setClick] = useState(false);
+  const [button, setButton] = useState(true);
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
+  const showButton = () => {
+    if(window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  };
+
+  useEffect(() => {
+    showButton()
+  },[])
+
+  window.addEventListener('resize', showButton)
+
   return (
-    <div className="top-nav-bar">
-      <span className="top-nav-bar__logo"> <Link to='/homepage'>CatYoga</Link> </span>
-      <nav className="top-nav-bar__nav">
-        <div className="nav-item" ><Link to='/about'>About</Link></div>
-        <div className="nav-item"><Link to='/FAQ'>FAQ</Link></div>
-        <div className="nav-item"><Link to='/Profile'>Profile</Link></div>
-        <div className="nav-item"><Link to='/yoga-class-info'>December2023</Link></div>
-      </nav>
-    </div>
+    <>
+    <nav className="topNav">
+      <div className="topNav-container">
+        <Link to="/" className='topNav-logo' onClick={closeMobileMenu}>
+          CATYOGA <i className="fa-solid fa-cat"/>
+        </Link>
+        
+    
+      <div className='menu-icon' onClick={handleClick}>
+        <i className={click ? 'fas fa-times' : 'fas fa-bars'}/>
+      </div>
+      <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+        <li className='nav-item'>
+          <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+            Home
+          </Link>
+        </li>
+        <li className='nav-item'>
+          <Link to='/about' className='nav-links' onClick={closeMobileMenu}>
+            About 
+          </Link>
+        </li>
+        <li className='nav-item'>
+          <Link to='/FAQ' className='nav-links' onClick={closeMobileMenu}>
+            FAQ
+          </Link>
+        </li>
+        <li className='nav-item'>
+          <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>
+            Profile
+          </Link>
+        </li>
+
+        <li>
+          <Link to='/yoga-class-info' className='nav-links-mobile' onClick={closeMobileMenu}>
+            Book Now
+          </Link>
+        </li>
+
+        <li>
+          <Link to='/login' className='nav-links-mobile' onClick={closeMobileMenu}>
+           Login
+          </Link>
+        </li>
+      </ul>
+      {button && <Button className="btn--outline" buttonStyle='btn--outline'>Book Now</Button>}
+      
+      {button && <Button className="btn--outline" buttonStyle='btn--outline'>Login</Button>}
+      </div>
+    </nav>
+    </>
   );
 };
 
