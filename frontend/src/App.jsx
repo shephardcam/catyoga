@@ -10,8 +10,6 @@ import AboutPage from './pages/AboutPage';
 import FAQPage from './pages/FAQPage';
 import WaiverPage from './pages/WaiverPage';
 import PaymentPage from './pages/PaymentPage';
-import Login from './components/Login';
-import Registration from './components/Registration';
 import LoginPage from './pages/LoginPage';
 
 function App() {
@@ -70,8 +68,6 @@ function App() {
   //     })
   // }, []);
 
-  
-
   return (
     <div className="App">
       <Router>
@@ -120,10 +116,6 @@ function App() {
         </ul>
   
       )} */}
-
-
-
-     
 
     </div>
   );
