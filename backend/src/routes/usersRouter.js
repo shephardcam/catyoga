@@ -52,7 +52,26 @@ module.exports = (db) => {
     }
   });
 
-  // Add more routes for other CRUD operations
+  // add login request
+  usersRouter.post("/login", async (req, res) => {
+    const { email, password } = req.body;
 
+    try {
+      // Authentication
+      const user = await db.query('SELECT * FROM USER_ACCOUNT WHERE EMAIL = $1 AND USER_PASSWORD = $2', [email, password]);
+
+      if (user.rows.length > 0) {
+        // Authentication success
+        res.json({ user: user.rows[0], token: 'yourAccessToken' });
+      } else {
+        // Authentication failed
+        res.status(401).json({ error: 'Invalid credentials' });
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  });
+  
   return usersRouter;
 };
