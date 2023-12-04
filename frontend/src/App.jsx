@@ -10,6 +10,7 @@ import AboutPage from './pages/AboutPage';
 import FAQPage from './pages/FAQPage';
 import WaiverPage from './pages/WaiverPage';
 import PaymentPage from './pages/PaymentPage';
+import Login from './components/Login';
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -81,6 +82,7 @@ function App() {
           <Route path='/FAQ' element={<FAQPage />} />
           <Route path='/waiver' element={<WaiverPage />} />
           <Route path='/payment' element={<PaymentPage/>}/>
+          <Route path='/login' element={<Login/>}/>
         </Routes>
 
       </Router>
