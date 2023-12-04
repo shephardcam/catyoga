@@ -10,7 +10,7 @@ const YogaList = ({ yogaClasses, user }) => {
       <ul >
         {yogaClasses.map((yogaClassData) => (
           <YogaListItem
-            key={yogaClassData.id}
+            id={yogaClassData.id}
             className={yogaClassData.class_name}
             price={yogaClassData.price}
             maxCapacity={yogaClassData.max_capacity}

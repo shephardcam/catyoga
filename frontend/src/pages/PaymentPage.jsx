@@ -7,7 +7,9 @@ import { Link } from 'react-router-dom';
 const PaymentPage = () => {
   const { state } = useYogaContext();
   console.log('Context State:', state);
-  const { className, price, details } = state;
+  const { className, price, details, id } = state;
+
+//classname, price details and id are all being imported in state for the get post request :)
 
   return (
     <body>

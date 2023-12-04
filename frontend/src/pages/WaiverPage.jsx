@@ -15,14 +15,14 @@ const WaiverPage = () => {
   const { state } = useYogaContext();
   const { setYogaData } = useYogaContext();
   console.log(state); 
-  const { className, price, details } = state;
+  const { className, price, details, id } = state;
 
   useEffect(() => {
     downloadPdf();
   }, []);
 
   const handleAgreeClick = () => {
-    setYogaData({ className, price, details });
+    setYogaData({ className, price, details, id });
   };
 
   return (
