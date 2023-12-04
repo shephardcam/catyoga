@@ -10,7 +10,6 @@ import AboutPage from './pages/AboutPage';
 import FAQPage from './pages/FAQPage';
 import WaiverPage from './pages/WaiverPage';
 import PaymentPage from './pages/PaymentPage';
-import LoginPage from './pages/LoginPage';
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -67,30 +66,26 @@ function App() {
       })
   }, []);
 
+  
+
   return (
     <div className="App">
       <Router>
-        <TopNav user={user} onLogout={handleLogout} />
-        {user ? (
-          <Routes>
-            <Route exact path='/' element={<HomePage />} />
-            <Route path='/homepage' element={<HomePage />} />
-            <Route path='/yoga-class-info' element={<BookingPage yogaClasses={yogaClasses} />} />
-            <Route path='/profile' element={<ProfilePage />} />
-            <Route path='/about' element={<AboutPage />} />
-            <Route path='/FAQ' element={<FAQPage />} />
-            <Route path='/waiver' element={<WaiverPage />} />
-            <Route path='/payment' element={<PaymentPage/>}/>
-          </Routes>
-        ) : (
-          <Routes>
-            <Route path='/login' element={<LoginPage handleLogin={handleLogin} handleRegistration={handleRegistration}/>} />
-          </Routes>
-        )}
+        <TopNav />
+        <Routes>
+          <Route exact path='/' element={<HomePage />} />
+          <Route path='/homepage' element={<HomePage />} />
+          <Route path='/yoga-class-info' element={<BookingPage yogaClasses={yogaClasses} />} />
+          <Route path='/profile' element={<ProfilePage />} />
+          <Route path='/about' element={<AboutPage />} />
+          <Route path='/FAQ' element={<FAQPage />} />
+          <Route path='/waiver' element={<WaiverPage />} />
+          <Route path='/payment' element={<PaymentPage/>}/>
+        </Routes>
 
       </Router>
 
-      <p>
+      {/* <p>
         Edit <code>src/App.js</code> and save to reload.
       </p>
 
@@ -106,7 +101,7 @@ function App() {
           ))}
         </ul>
   
-      )}
+      )} */}
 
 
 
