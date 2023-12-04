@@ -3,7 +3,7 @@ import './styles/TopNavBar.scss';
 import { Link } from 'react-router-dom';
 import { Button } from './Button';
 
-const TopNav = () => {
+const TopNav = ({ user }) => {
 
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
@@ -38,42 +38,25 @@ const TopNav = () => {
         <i className={click ? 'fas fa-times' : 'fas fa-bars'}/>
       </div>
       <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-        <li className='nav-item'>
-          <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-            Home
-          </Link>
-        </li>
-        <li className='nav-item'>
-          <Link to='/about' className='nav-links' onClick={closeMobileMenu}>
-            About 
-          </Link>
-        </li>
-        <li className='nav-item'>
-          <Link to='/FAQ' className='nav-links' onClick={closeMobileMenu}>
-            FAQ
-          </Link>
-        </li>
-        <li className='nav-item'>
-          <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>
-            Profile
-          </Link>
-        </li>
+        <li className='nav-item'><Link to='/' className='nav-links' onClick={closeMobileMenu}>Home</Link></li>
+        <li className='nav-item'><Link to='/about' className='nav-links' onClick={closeMobileMenu}>About</Link></li>
+        <li className='nav-item'><Link to='/FAQ' className='nav-links' onClick={closeMobileMenu}>FAQ</Link></li>
+        <li><Link to='/yoga-class-info' className='nav-links-mobile' onClick={closeMobileMenu}>Book Now</Link></li>
+        <li><Link to='/login' className='nav-links-mobile' onClick={closeMobileMenu}>Login</Link></li>
+        
+        {/* Handles display if user logged in */}
+        {user ? (
+          <>
+            <li className='nav-item'><Link to='/profile' className='nav-links' onClick={closeMobileMenu}>Profile</Link></li>
+          </>
+        ) : (
+          <div className="nav-item"><Link to='/login' className='nav-links'>Login</Link></div>
+        )}
 
-        <li>
-          <Link to='/yoga-class-info' className='nav-links-mobile' onClick={closeMobileMenu}>
-            Book Now
-          </Link>
-        </li>
-
-        <li>
-          <Link to='/login' className='nav-links-mobile' onClick={closeMobileMenu}>
-           Login
-          </Link>
-        </li>
       </ul>
+
       {button && <Button className="btn--outline" buttonStyle='btn--outline'>Book Now</Button>}
-      
-      {button && <Button className="btn--outline" buttonStyle='btn--outline'>Login</Button>}
+      {/* {button && <Button className="btn--outline" buttonStyle='btn--outline'>Login</Button>} */}
       </div>
     </nav>
     </>

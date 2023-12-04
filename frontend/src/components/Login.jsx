@@ -18,7 +18,7 @@ const Login = ({ onLogin }) => {
       onLogin(user);
 
       // Redirect to homepage
-      navigate('/homepage');
+      navigate('/');
 
     } catch (error) {
       console.error('Login failed:', error);

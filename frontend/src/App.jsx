@@ -11,13 +11,15 @@ import FAQPage from './pages/FAQPage';
 import WaiverPage from './pages/WaiverPage';
 import PaymentPage from './pages/PaymentPage';
 import Login from './components/Login';
+import Registration from './components/Registration';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   const [users, setUsers] = useState([]);
   const [yogaClasses, setYogaClasses] = useState([]);
   const [isLoadingUsers, setIsLoadingUsers] = useState(true);
 
-  // Login
+  // Login /////////////////////////////////  
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -51,39 +53,53 @@ function App() {
       console.error('Registration failed:', error);
     }
   };
+  // End of Login helpers /////////////////////////////////////////
 
-  // Get other data
-  useEffect(() => {
-    // Fetch user data from the Express API
-    fetch("/api/users")
-      .then((response) => response.json())
-      .then((data) => {
-        setUsers(data);
-        setIsLoadingUsers(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching user data:", error);
-        setIsLoadingUsers(false);
-      })
-  }, []);
+  // // Get other data
+  // useEffect(() => {
+  //   // Fetch user data from the Express API
+  //   fetch("/api/users")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setUsers(data);
+  //       setIsLoadingUsers(false);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching user data:", error);
+  //       setIsLoadingUsers(false);
+  //     })
+  // }, []);
 
   
 
   return (
     <div className="App">
       <Router>
-        <TopNav />
+      <TopNav user={user} />
+      {/* Handles which pages load dependant on if user logged in */}
+      {user ? (
+        // Pages accessible when logged in (all pages)
         <Routes>
           <Route exact path='/' element={<HomePage />} />
           <Route path='/homepage' element={<HomePage />} />
-          <Route path='/yoga-class-info' element={<BookingPage yogaClasses={yogaClasses} />} />
-          <Route path='/profile' element={<ProfilePage />} />
           <Route path='/about' element={<AboutPage />} />
           <Route path='/FAQ' element={<FAQPage />} />
+          <Route path='/profile' element={<ProfilePage onLogout={handleLogout} />} />
+          <Route path='/yoga-class-info' element={<BookingPage yogaClasses={yogaClasses} />} />
           <Route path='/waiver' element={<WaiverPage />} />
           <Route path='/payment' element={<PaymentPage/>}/>
-          <Route path='/login' element={<Login/>}/>
         </Routes>
+      ) : (
+        // Pages accessible when not logged in (notice that waiver and payment will not load when not logged in)
+        <Routes>
+          <Route exact path='/' element={<HomePage />} />
+          <Route path='/homepage' element={<HomePage />} />
+          <Route path='/about' element={<AboutPage />} />
+          <Route path='/FAQ' element={<FAQPage />} />
+          <Route path='/yoga-class-info' element={<BookingPage yogaClasses={yogaClasses} />} />
+          <Route path='/login' element={<LoginPage handleLogin={handleLogin} handleRegistration={handleRegistration}/>} />
+        </Routes>
+      )}
 
       </Router>
 
