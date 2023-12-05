@@ -8,8 +8,8 @@ import axios from 'axios';
 const PaymentPage = ({ user, yogaClasses }) => {
   const { state } = useYogaContext();
   console.log('Context State:', state);
-  const { className, price, details, id } = state; //this is yoga_class_info so it is not used to book a class. I need yoga_classes for the unique ID
-
+  const { className, price, details, id, selectedYogaClass} = state; //selectedYogaClass now contains the actual class day not just the class_info
+  console.log('classID:', selectedYogaClass.id)
   //classname, price details and id are all being imported in state for the get post request :)
 
   // new stuff

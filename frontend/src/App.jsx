@@ -95,7 +95,7 @@ function App() {
           <Route path='/about' element={<AboutPage />} />
           <Route path='/FAQ' element={<FAQPage />} />
           <Route path='/profile' element={<ProfilePage onLogout={handleLogout} />} />
-          <Route path='/yoga-class-info' element={<BookingPage yogaClasses={yogaClasses} user={user} />} />
+          <Route path='/yoga-class-info' element={<BookingPage actualYogaClasses={yogaClasses} user={user} />} />
           <Route path='/waiver' element={<WaiverPage />} />
           <Route path='/payment' element={<PaymentPage user={user} yogaClasses={yogaClasses} />}/>
           <Route path='/thankyou' element={<ThankYouPage/>}/>
