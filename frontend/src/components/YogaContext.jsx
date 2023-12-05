@@ -7,7 +7,8 @@ const initialState = {
   details: '',
   id: null,
   startTime: '',
-  user:''
+  user:'',
+  classDay: ''
 
 };
 
@@ -24,7 +25,9 @@ const yogaReducer = (state, action) => {
         price: action.payload.price,
         details: action.payload.details,
         id: action.payload.id,
-        startTime: action.payload.startTime
+        startTime: action.payload.startTime,
+        user: action.payload.user,
+        classDay: action.payload.classDay
       };
     default:
       return state;

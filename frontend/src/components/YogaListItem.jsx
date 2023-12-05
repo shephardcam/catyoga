@@ -7,7 +7,7 @@ const YogaListItem = ({ className, price, details, duration, classDay, startTime
   const { setYogaData } = useYogaContext();
 
   const handlePurchaseClick = () => {
-    setYogaData({ className, price, details, id });
+    setYogaData({ className, price, details, id, startTime, user, classDay });
   };
 
   return (
