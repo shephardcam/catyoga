@@ -11,6 +11,9 @@ const initialState = {
 // Define the actions
 const SET_YOGA_DATA = 'SET_YOGA_DATA';
 
+// add selected yogaClass
+const SET_SELECTED_YOGA_CLASS = 'SET_SELECTED_YOGA_CLASS'; // changed code
+
 // Define the reducer
 const yogaReducer = (state, action) => {
   switch (action.type) {
@@ -38,8 +41,13 @@ export const YogaProvider = ({ children }) => {
     dispatch({ type: SET_YOGA_DATA, payload: data });
   };
 
+  // add new logic
+  const setSelectedYogaClass = (yogaClass) => { // changed code
+    dispatch({ type: SET_SELECTED_YOGA_CLASS, payload: yogaClass });
+  };
+
   return (
-    <YogaContext.Provider value={{ state, setYogaData }}>
+    <YogaContext.Provider value={{ state, setYogaData, setSelectedYogaClass }}> 
       {children}
     </YogaContext.Provider>
   );
