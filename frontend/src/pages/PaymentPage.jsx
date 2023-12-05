@@ -11,6 +11,7 @@ const PaymentPage = ({ user, yogaClasses }) => {
   const { className, price, details, id } = state; //selectedYogaClass now contains the actual class day not just the class_info
   //classname, price details and id are all being imported in state for the get post request :) -------->>>>>> after some changed code, id is now the correct id
 
+
   // new stuff
   const navigate = useNavigate();
 

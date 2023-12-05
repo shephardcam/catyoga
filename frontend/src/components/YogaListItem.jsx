@@ -8,7 +8,6 @@ const YogaListItem = ({ className, price, details, duration, classDay, startTime
 
   const handlePurchaseClick = () => {
     setYogaData({ className, price, details, id });
-    setSelectedYogaClass(yogaClass); // changed code
   };
 
   // console.log('yogaListItem id is:', id)

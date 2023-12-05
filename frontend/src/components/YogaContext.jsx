@@ -6,8 +6,6 @@ const initialState = {
   price: '',
   details: '',
   id: null,
-  // add selected classId
-  selectedYogaClass:null, // changed code
 };
 
 // Define the actions
@@ -27,12 +25,6 @@ const yogaReducer = (state, action) => {
         details: action.payload.details,
         id: action.payload.id
       };
-    // add new case 
-    case SET_SELECTED_YOGA_CLASS: // changed code
-        return{
-          ...state,
-          selectedYogaClass: action.payload,
-        };
     default:
       return state;
   }
