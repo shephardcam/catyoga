@@ -4,11 +4,11 @@ import { useYogaContext } from './YogaContext';
 import { Link } from 'react-router-dom';
 
 const YogaListItem = ({ className, price, details, duration, classDay, startTime, isMaxCapacity, maxCapacity, user, id, yogaClass }) => {
-  const { setYogaData, setSelectedYogaClass } = useYogaContext();
+  const { setYogaData, setSelectedYogaClass } = useYogaContext(); // changed code
 
   const handlePurchaseClick = () => {
     setYogaData({ className, price, details, id });
-    setSelectedYogaClass(yogaClass);
+    setSelectedYogaClass(yogaClass); // changed code
   };
 
   console.log('yogaListItem id is:', id)

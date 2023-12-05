@@ -25,7 +25,7 @@ const YogaList = ({ yogaClasses, user, yogaClassInfo }) => {
             isMaxCapacity={yogaClassData.is_max_capacity}
             classInfoId={yogaClassData.yoga_class_info_id}
 
-            // from yoga_class_info
+            // from yoga_class_info@yoga_classes
             className={yogaClassInfo[yogaClassData.yoga_class_info_id-1].class_name}
             price={yogaClassInfo[yogaClassData.yoga_class_info_id-1].price}
             maxCapacity={yogaClassInfo[yogaClassData.yoga_class_info_id-1].max_capacity}

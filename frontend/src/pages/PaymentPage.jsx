@@ -10,7 +10,7 @@ const PaymentPage = ({ user, yogaClasses }) => {
   console.log('Context State:', state);
   const { className, price, details, id, selectedYogaClass} = state; //selectedYogaClass now contains the actual class day not just the class_info
   console.log('classID:', selectedYogaClass.id)
-  //classname, price details and id are all being imported in state for the get post request :)
+  //classname, price details and id are all being imported in state for the get post request :) -------->>>>>> after some changed code, id is now the correct id
 
   // new stuff
   const navigate = useNavigate();

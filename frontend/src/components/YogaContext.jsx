@@ -7,14 +7,14 @@ const initialState = {
   details: '',
   id: null,
   // add selected classId
-  selectedYogaClass:null,
+  selectedYogaClass:null, // changed code
 };
 
 // Define the actions
 const SET_YOGA_DATA = 'SET_YOGA_DATA';
 
 // add selected yogaClass
-const SET_SELECTED_YOGA_CLASS = 'SET_SELECTED_YOGA_CLASS';
+const SET_SELECTED_YOGA_CLASS = 'SET_SELECTED_YOGA_CLASS'; // changed code
 
 // Define the reducer
 const yogaReducer = (state, action) => {
@@ -28,7 +28,7 @@ const yogaReducer = (state, action) => {
         id: action.payload.id
       };
     // add new case 
-    case SET_SELECTED_YOGA_CLASS:
+    case SET_SELECTED_YOGA_CLASS: // changed code
         return{
           ...state,
           selectedYogaClass: action.payload,
@@ -50,12 +50,12 @@ export const YogaProvider = ({ children }) => {
   };
 
   // add new logic
-  const setSelectedYogaClass = (yogaClass) => {
+  const setSelectedYogaClass = (yogaClass) => { // changed code
     dispatch({ type: SET_SELECTED_YOGA_CLASS, payload: yogaClass });
   };
 
   return (
-    <YogaContext.Provider value={{ state, setYogaData, setSelectedYogaClass }}>
+    <YogaContext.Provider value={{ state, setYogaData, setSelectedYogaClass }}> 
       {children}
     </YogaContext.Provider>
   );
