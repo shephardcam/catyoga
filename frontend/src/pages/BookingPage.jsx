@@ -29,7 +29,7 @@ const BookingPage = ({ user, actualYogaClasses}) => {
     fetchData();
   }, []);
 
-  console.log('What I need:', actualYogaClasses)
+  // console.log('What I need:', actualYogaClasses)
 
   //No longer using ////////////////////////////////////////////////////////////////////////////////
   const customLogic = (yogaClasses, yogaClassInfo) => {
@@ -50,7 +50,7 @@ const BookingPage = ({ user, actualYogaClasses}) => {
   };
 
   const matchedData = customLogic(yogaClasses, yogaClassInfo , user);
-  console.log('What matchedData is doing:', matchedData);
+  // console.log('What matchedData is doing:', matchedData);
     //No longer using ////////////////////////////////////////////////////////////////////////////////
 
   return (

@@ -11,8 +11,8 @@ const YogaListItem = ({ className, price, details, duration, classDay, startTime
     setSelectedYogaClass(yogaClass); // changed code
   };
 
-  console.log('yogaListItem id is:', id)
-  console.log('yogaClass', yogaClass)
+  // console.log('yogaListItem id is:', id)
+  // console.log('yogaClass', yogaClass)
   return (
     <div className="YogaListItem">
       <h2>{classDay}{startTime} {isMaxCapacity}</h2>

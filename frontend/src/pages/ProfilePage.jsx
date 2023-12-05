@@ -21,13 +21,13 @@ const ProfilePage = ({ onLogout, user, yogaClasses, yogaClassInfo }) => {
   
   // Select only classIDs that match user.id
   const userRegisteredClassIds = allRegisteredClassIds.filter((userClassId) => userClassId.user_id === user.id);
-  console.log('userRegisteredClasses', userRegisteredClassIds)
+  // console.log('userRegisteredClasses', userRegisteredClassIds)
 
   // Select IDs from yoga_classes
   const userRegisteredClasses = userRegisteredClassIds.map((userClass) => userClass.yoga_class_id);
   // Select only classes with userID matching user.id
   const userYogaClasses = yogaClasses.filter((yogaClass) => userRegisteredClasses.includes(yogaClass.id));
-  console.log('userRegisteredClassesInYoga', userYogaClasses);
+  // console.log('userRegisteredClassesInYoga', userYogaClasses);
 
   // Render user's registered classes
   const renderUserClasses = () => {

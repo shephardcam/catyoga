@@ -5,7 +5,7 @@ import '../styles/yogaList.scss';
 
 const YogaList = ({ yogaClasses, user, yogaClassInfo }) => {
   // console.log('yoooooooooooooo', yogaClasses)
-  console.log('class info', yogaClassInfo)
+  // console.log('class info', yogaClassInfo)
 
   // yogaClasses.map((yogaClass) => (
   //   console.log(yogaClass.yoga_class_info_id)

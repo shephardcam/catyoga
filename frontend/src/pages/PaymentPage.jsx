@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import React from 'react';
+import { CardElement } from '@stripe/react-stripe-js';
 import { useYogaContext } from '../components/YogaContext';
 import '../styles/payment.scss';
 import { Link, useNavigate } from 'react-router-dom';
