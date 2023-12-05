@@ -3,10 +3,11 @@ import React, { useState, useEffect } from 'react';
 import YogaList from '../components/YogaList';
 import '../styles/BookingPage.scss';
 
-const BookingPage = ({user}) => {
+const BookingPage = ({ user, actualYogaClasses}) => {
   const [yogaClasses, setYogaClasses] = useState([]);
   const [yogaClassInfo, setYogaClassInfo] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,6 +29,9 @@ const BookingPage = ({user}) => {
     fetchData();
   }, []);
 
+  // console.log('What I need:', actualYogaClasses)
+
+  //No longer using ////////////////////////////////////////////////////////////////////////////////
   const customLogic = (yogaClasses, yogaClassInfo) => {
     const matchedData = [];
   
@@ -46,14 +50,15 @@ const BookingPage = ({user}) => {
   };
 
   const matchedData = customLogic(yogaClasses, yogaClassInfo , user);
-  console.log('matchedData:', matchedData);
+  // console.log('What matchedData is doing:', matchedData);
+    //No longer using ////////////////////////////////////////////////////////////////////////////////
 
   return (
     <div className="booking-page">
       {isLoading ? (
         <p>Loading yoga classes...</p>
       ) : (
-        <YogaList className="yoga-list" yogaClasses={matchedData} user={user} />
+        <YogaList className="yoga-list" yogaClasses={actualYogaClasses} user={user} yogaClassInfo={yogaClassInfo} actualYogaClasses={actualYogaClasses}/>
       )}
     </div>
   );

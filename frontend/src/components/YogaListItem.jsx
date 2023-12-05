@@ -3,13 +3,15 @@ import '../styles/yogaListItem.scss';
 import { useYogaContext } from './YogaContext';
 import { Link } from 'react-router-dom';
 
-const YogaListItem = ({ className, price, details, duration, classDay, startTime, isMaxCapacity, maxCapacity, user, id }) => {
-  const { setYogaData } = useYogaContext();
+const YogaListItem = ({ className, price, details, duration, classDay, startTime, isMaxCapacity, maxCapacity, user, id, yogaClass }) => {
+  const { setYogaData, setSelectedYogaClass } = useYogaContext(); // changed code
 
   const handlePurchaseClick = () => {
-    setYogaData({ className, price, details, id, startTime, user, classDay });
+    setYogaData({ className, price, details, id });
   };
 
+  // console.log('yogaListItem id is:', id)
+  // console.log('yogaClass', yogaClass)
   return (
     <div className="YogaListItem">
       <h2>{classDay}{startTime} {isMaxCapacity}</h2>
