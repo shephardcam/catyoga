@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/AboutPage.scss';
-// import Content from '../components/Content';
+
 
 const AboutPage = () => {
   return (
@@ -9,8 +9,6 @@ const AboutPage = () => {
        <h1>Welcome to CatYoga<i className="fa-solid fa-cat" /></h1>
       <h2>Where Mindfulness Meets Whiskers!</h2>
       <video src="/videos/video-3.mp4" autoPlay loop muted />
-   
-      {/* <Content />  */}
       
     </div>
 
@@ -46,9 +44,6 @@ We invite you to roll out a mat, breathe in positivity, and embrace the gentle p
 
 Come for the yoga, stay for the purrs.
 </p>
-
-  
-
 
 </div>
     
