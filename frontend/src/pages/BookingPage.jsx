@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import YogaList from '../components/YogaList';
 import '../styles/BookingPage.scss';
 
-const BookingPage = () => {
+const BookingPage = ({user}) => {
   const [yogaClasses, setYogaClasses] = useState([]);
   const [yogaClassInfo, setYogaClassInfo] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -45,7 +45,7 @@ const BookingPage = () => {
     return matchedData;
   };
 
-  const matchedData = customLogic(yogaClasses, yogaClassInfo);
+  const matchedData = customLogic(yogaClasses, yogaClassInfo , user);
   console.log('matchedData:', matchedData);
 
   return (
@@ -53,7 +53,7 @@ const BookingPage = () => {
       {isLoading ? (
         <p>Loading yoga classes...</p>
       ) : (
-        <YogaList className="yoga-list" yogaClasses={matchedData} />
+        <YogaList className="yoga-list" yogaClasses={matchedData} user={user} />
       )}
     </div>
   );

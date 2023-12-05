@@ -5,6 +5,7 @@ const initialState = {
   className: '',
   price: '',
   details: '',
+  id: null,
 };
 
 // Define the actions
@@ -19,6 +20,7 @@ const yogaReducer = (state, action) => {
         className: action.payload.className,
         price: action.payload.price,
         details: action.payload.details,
+        id: action.payload.id
       };
     default:
       return state;
