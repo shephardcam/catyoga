@@ -121,7 +121,7 @@ function App() {
           <Route path='/homepage' element={<HomePage />} />
           <Route path='/about' element={<AboutPage />} />
           <Route path='/FAQ' element={<FAQPage />} />
-          <Route path='/yoga-class-info' element={<BookingPage yogaClasses={yogaClasses} />} />
+          <Route path='/yoga-class-info' element={<BookingPage actualYogaClasses={yogaClasses} user={user} />} />
           <Route path='/login' element={<LoginPage handleLogin={handleLogin} handleRegistration={handleRegistration}/>} />
         </Routes>
       )}
