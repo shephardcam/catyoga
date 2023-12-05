@@ -14,9 +14,9 @@ import LoginPage from './pages/LoginPage';
 import ThankYouPage from './pages/ThankYouPage';
 
 function App() {
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
   const [yogaClasses, setYogaClasses] = useState([]);
-  const [isLoadingUsers, setIsLoadingUsers] = useState(true);
+  // const [isLoadingUsers, setIsLoadingUsers] = useState(true);
 
   // Login /////////////////////////////////  
   const [user, setUser] = useState(null);
@@ -54,6 +54,19 @@ function App() {
   };
   // End of Login helpers /////////////////////////////////////////
 
+  // Get yoga_classes
+  useEffect(() => {
+    // Fetch data from the Express API
+    fetch("/api/yoga-classes")
+      .then((response) => response.json())
+      .then((data) => {
+        setYogaClasses(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching user data:", error);
+      })
+  }, []);
+
   // // Get other data
   // useEffect(() => {
   //   // Fetch user data from the Express API
@@ -84,7 +97,7 @@ function App() {
           <Route path='/profile' element={<ProfilePage onLogout={handleLogout} />} />
           <Route path='/yoga-class-info' element={<BookingPage yogaClasses={yogaClasses} user={user} />} />
           <Route path='/waiver' element={<WaiverPage />} />
-          <Route path='/payment' element={<PaymentPage/>}/>
+          <Route path='/payment' element={<PaymentPage user={user} yogaClasses={yogaClasses} />}/>
           <Route path='/thankyou' element={<ThankYouPage/>}/>
         </Routes>
       ) : (
