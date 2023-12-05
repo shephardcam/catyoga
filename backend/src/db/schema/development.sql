@@ -28,12 +28,12 @@ INSERT INTO YOGA_CLASSES (YOGA_CLASS_INFO_ID, CLASS_DAY, START_TIME, IS_MAX_CAPA
 
 -- Sample data for REGISTERED_CLASSES table
 INSERT INTO REGISTERED_CLASSES (USER_ID, YOGA_CLASS_ID, IS_PAID) VALUES
-  (1, 1, FALSE),
-  (2, 2, FALSE),
+  (1, 1, TRUE),
+  (2, 2, TRUE),
   (3, 3, TRUE),
-  (4, 1, TRUE),
-  (5, 2, FALSE),
-  (6, 3, TRUE),
-  (7, 1, TRUE),
-  (8, 2, FALSE),
-  (9, 3, TRUE);
+  (4, 4, TRUE),
+  (5, 5, TRUE),
+  (6, 6, TRUE),
+  (7, 7, TRUE),
+  (8, 1, TRUE),
+  (9, 2, TRUE);
