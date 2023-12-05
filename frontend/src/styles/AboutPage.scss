@@ -1,0 +1,135 @@
+
+.about-container {
+  // height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: center;
+// box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  
+}
+
+.about-container video {
+  // object-fit: cover;
+  // width: 50%;
+  height: 50%;
+  // padding: 0px 50px;
+  // margin-top: -100px;
+  // padding-left: 450px;
+  // position: fixed;
+  // z-index: -1;
+}
+
+.about-container > h1 {
+  color: #fff;
+  font-size: 90px;
+  margin-top: 100px;
+}
+
+.about-container > h2 {
+  color: lightcoral;
+  font-size: 40px;
+  font-weight: 200;
+}
+
+.second-container {
+    // padding: -300px;
+    margin-top: 100px;
+    background: #fff;
+}
+
+.second-container > h3 {
+  display: flex;
+    font-size: 2em;  
+    color: #000000;
+    -ms-flex-align: start;
+    margin-left: 25em;
+    padding-top: 1em;
+
+}
+
+.second-container > h4 {
+  display: flex;
+    font-size: 1.5em;  
+    color: #000000;
+    -ms-flex-align: start;
+    margin-left: 4em;
+    padding-top: 1em;
+}
+
+.second-container > li {
+  // margin-top: 280px;
+  color: black;
+  font-size: 22px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+    margin: 0 10em;
+    padding-bottom: 2em;
+    padding-top: 1em;
+}
+
+.second-container > h5 {
+  display: flex;
+    font-size: 1.5em;  
+    color: #000000;
+    -ms-flex-align: start;
+    margin-left: 4em;
+    padding-top: 1em;
+}
+
+.second-container > p {
+  display: flex;
+    font-size: 1.5em;  
+    color: #000000;
+    -ms-flex-align: start;
+    margin-left: 4em;
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
+.second-container > h6 {
+  display: flex;
+    font-size: 1.8em;  
+    color: #000000;
+    -ms-flex-align: start;
+    margin-left: 28em;
+    padding-top: 1em;
+}
+
+
+@media screen and (max-width: 960px) {
+  .about-container > h1 {
+    font-size: 70px;
+    // margin-top: -150px;
+  }
+
+  .second-container > h3 {
+    margin-left: 12em;
+  }
+
+  .second-container > h4 {
+    margin-left: 2em;
+    margin-right: 1em;
+  }
+
+  .second-container > h6 {
+    margin-left: 12em;
+  }
+
+  .second-container > p {
+    margin-left: 2em;
+  }
+
+}
+
+// @media screen and (max-width: 768px) {
+//   .about-container > h1 {
+//     font-size: 50px;
+//     // margin-top: -100px;
+//   }
+
+//   .second-container > p {
+//     font-size: 30px;
+//   }
+// }

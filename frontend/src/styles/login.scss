@@ -1,0 +1,96 @@
+ .main {
+  margin: 220px 670px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.container {
+  width: 425px;
+    background: transparent;
+    border: 4px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    color: black;
+    border-radius: 40px;
+    padding: 90px 40px;
+}
+
+h2 {
+  font-size: 36px;
+  text-align: center;
+  font-weight: 600;
+  padding: 3px;
+}
+
+h6 {
+  font-size: 20px;
+  text-align: start;
+  font-weight: 600;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+
+.input-box input {
+  width: 100%;
+    height: 100%;
+    background: lightgray;
+    border: none;
+    outline: black;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px ;
+    color: black;
+    padding: 10px 45px 10px 20px;
+}
+
+.input-box input::placeholder {
+  color: black;
+}
+
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 60%;
+  font-size: 16px;
+}
+
+.btn-btn {
+  width: 100%;
+  height: 45px;
+  background: lightcoral;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 20px;
+  color: black;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.register-link {
+  font-size: 16px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+
+.register-link p a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+@media screen and (max-width: 960px) {
+  .main {
+    margin: 120px 250px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+}

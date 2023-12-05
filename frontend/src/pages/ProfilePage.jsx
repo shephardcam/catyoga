@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useYogaContext } from '../components/YogaContext';
-import '../styles/ProfilePage.scss'
 
 const ProfilePage = ({ onLogout, user, yogaClasses, yogaClassInfo }) => {
 
@@ -19,7 +17,7 @@ const ProfilePage = ({ onLogout, user, yogaClasses, yogaClassInfo }) => {
     })
   }, []);
 
-  console.log('allRegisteredClassIds', allRegisteredClassIds)
+  // console.log('allRegisteredClassIds', allRegisteredClassIds)
   
   // Select only classIDs that match user.id
   const userRegisteredClassIds = allRegisteredClassIds.filter((userClassId) => userClassId.user_id === user.id);

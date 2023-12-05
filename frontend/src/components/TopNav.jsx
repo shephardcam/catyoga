@@ -35,8 +35,7 @@ const TopNav = ({ user }) => {
         <li className='nav-item'><Link to='/' className='nav-links' onClick={closeMobileMenu}>Home</Link></li>
         <li className='nav-item'><Link to='/about' className='nav-links' onClick={closeMobileMenu}>About</Link></li>
         <li className='nav-item'><Link to='/FAQ' className='nav-links' onClick={closeMobileMenu}>FAQ</Link></li>
-        <li><Link to='/yoga-class-info' className='nav-links-mobile' onClick={closeMobileMenu}>Book Now</Link></li>
-        <li><Link to='/login' className='nav-links-mobile' onClick={closeMobileMenu}>Login</Link></li> 
+       
         {/* Handles display if user logged in */}
         {user ? (
           // if user logged in
@@ -45,8 +44,9 @@ const TopNav = ({ user }) => {
           </>
         ) : (
           //  if user not logged in
-          <div className="nav-item"><Link to='/login' className='nav-links'>Login</Link></div>
-        )}
+          <div className="nav-item"><Link to='/login' className='nav-links' onClick={closeMobileMenu}>Login</Link></div>
+          )}
+          <li><Link to='/yoga-class-info' className='nav-links-mobile' onClick={closeMobileMenu}>Book Now</Link></li>
       </ul>
 
       {button && <Button className="btn--outline" buttonStyle='btn--outline'>Book Now</Button>}
