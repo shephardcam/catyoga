@@ -15,17 +15,16 @@ const YogaListItem = ({ className, price, details, duration, classDay, startTime
   // console.log('yogaClass', yogaClass)
   return (
     <div className="YogaListItem">
-      <h2>{classDay}{startTime} {isMaxCapacity}</h2>
-      <h3>Yoga Class</h3>
-      <p>name: {className}</p>
-      <p>price: {price}</p>
-      <p>Is Max Capacity: {maxCapacity}</p>
-      <p>details: {details}</p>
-      <p>duration: {duration}</p>
+      <h2>{classDay} {startTime} {isMaxCapacity}</h2>
+      <h3>{className}</h3>
+      <p>Price: {price}$</p>
+      <p>Capacity: {maxCapacity}</p>
+      <p>Details: {details}</p>
+      <p>Duration: {duration}</p>
 
       {user ? (
         isMaxCapacity ? (
-          <p>Class Full!</p>
+          <h1>The class is full</h1>
         ) : (
           <button onClick={handlePurchaseClick}>
             <Link to="/waiver">
