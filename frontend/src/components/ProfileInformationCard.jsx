@@ -19,9 +19,14 @@ const ProfileInformationCard = ({ user, onEdit }) => {
   };
 
   const handleSaveClick = () => {
-    // Call a function to update user information in the parent component
-    onEdit(editedUser);
-    setIsEditing(false);
+    try {
+      // Call a function to update user information in the parent component
+      onEdit(editedUser);
+      setIsEditing(false);
+    } catch (error) {
+      console.error('Error updating user information:', error);
+      // Handle the error as needed
+    }
   };
 
   return (
@@ -29,7 +34,7 @@ const ProfileInformationCard = ({ user, onEdit }) => {
       {isEditing ? (
         <form>
           <p>
-            <label>Fullname:<input type="text" name="fullname" value={editedUser.fullname} onChange={handleInputChange} /></label>
+            <label>Full Name:<input type="text" name="fullname" value={editedUser.fullname} onChange={handleInputChange} /></label>
           </p>
           <p>
             <label>Email:<input type="text" name="email" value={editedUser.email} onChange={handleInputChange} /></label>
@@ -38,24 +43,22 @@ const ProfileInformationCard = ({ user, onEdit }) => {
             <label>Password:<input type="password" name="password" value={editedUser.password} onChange={handleInputChange} /></label>
           </p>
           
-          <button type="button" onClick={handleSaveClick}>
-            Save
-          </button>
-
-          <button type="button" onClick={handleCancelClick}>
-            Cancel
-          </button>
+          <div className="button">
+            <button type="button" onClick={handleSaveClick}>Save</button>
+          </div>
+          <div className="button">
+            <button type="button" onClick={handleCancelClick}>Cancel</button>  
+          </div>
 
         </form>
       ) : (
         <>
-          <p>
-            Full Name: {user.fullname}
-          </p>
-          <p>
-            Email: {user.email}
-          </p>
-          <button onClick={handleEditClick}>Edit</button>
+          <p>Full Name: {user.fullname}</p>
+          <p>Email: {user.email}</p>
+          <div className="button">
+            <button onClick={handleEditClick}>Edit</button>
+          </div>
+          
         </>
       )}
     </div>

@@ -6,6 +6,10 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+
+  h1 {
+    padding-bottom: 70px;
+  }
 }
 
 .card {
@@ -36,6 +40,10 @@ button {
 
 button:hover {
   background-color: #267bb5;
+}
+
+.button {
+  padding-top: 5px;
 }
 
 /* Styling for user information card */

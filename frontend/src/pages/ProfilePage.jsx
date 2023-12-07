@@ -9,6 +9,11 @@ const ProfilePage = ({ onLogout, user, yogaClasses, yogaClassInfo }) => {
   const [userState, setUserState] = useState(user);
 
   useEffect(() => {
+    // Update userState when the user prop changes
+    setUserState(user);
+  }, [user]);
+  
+  useEffect(() => {
     fetch('./api/registered-classes')
       .then((response) => response.json())
       .then((data) => {
@@ -27,7 +32,7 @@ const ProfilePage = ({ onLogout, user, yogaClasses, yogaClassInfo }) => {
   const handleEditUser = async (editedUser) => {
     try {
       // Update user information on the server
-      await fetch(`/api/users/${userState.id}`, {
+      await fetch(`./api/users/${userState.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -35,8 +40,16 @@ const ProfilePage = ({ onLogout, user, yogaClasses, yogaClassInfo }) => {
         body: JSON.stringify(editedUser),
       });
 
+      // Fetch the updated user information from the server
+      const response = await fetch(`./api/users/${userState.id}`);
+      const updatedUserData = await response.json();
+
+      console.log('Updated user data from the server:', updatedUserData);
+
       // Update the user state in component assuming success
-      setUserState((prevUser) => ({ ...prevUser, ...editedUser }));
+      setUserState((prevUserState) => ({ ...prevUserState, ...updatedUserData }));
+    // Update the user cookie
+      document.cookie = `user=${JSON.stringify(updatedUserData)}; path=/`;
     } catch (error) {
       console.error('Error updating user information:', error);
     }
@@ -44,11 +57,11 @@ const ProfilePage = ({ onLogout, user, yogaClasses, yogaClassInfo }) => {
 
   return (
     <div className="container">
-      <h1>Hello {user.fullname}!</h1>
+      <h1>Hello {userState.fullname}!</h1>
 
       {/* Render information card */}
       <h3>Your Information:</h3>
-      <ProfileInformationCard user={user} onEdit={handleEditUser} />
+      <ProfileInformationCard user={userState} onEdit={handleEditUser} />
 
       {/* Render registered classes card */}
       <h3>Your Upcoming Classes:</h3>
