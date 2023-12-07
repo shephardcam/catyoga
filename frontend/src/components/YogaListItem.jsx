@@ -17,7 +17,7 @@ const YogaListItem = ({ className, price, details, duration, classDay, startTime
     <div className="YogaListItem">
       <h2>{classDay} {startTime} {isMaxCapacity}</h2>
       <h3>{className}</h3>
-      <p>Price: {price}$</p>
+      <p>Price: ${price}</p>
       <p>Capacity: {maxCapacity}</p>
       <p>Details: {details}</p>
       <p>Duration: {duration}</p>
