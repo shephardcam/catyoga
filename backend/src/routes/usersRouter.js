@@ -52,6 +52,22 @@ module.exports = (db) => {
     }
   });
 
+  usersRouter.get("/users/:userId", async (req, res) => {
+    const userId = req.params.userId;
+  
+    try {
+      const user = await db.query("SELECT * FROM USER_ACCOUNT WHERE ID = $1", [userId]);
+      if (user.rows.length > 0) {
+        res.json(user.rows[0]);
+      } else {
+        res.status(404).json({ error: "User not found" });
+      }
+    } catch (error) {
+      console.error("Error getting user:", error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  });
+
   // add login request
   usersRouter.post("/login", async (req, res) => {
     const { email, password } = req.body;
